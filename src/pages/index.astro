@@ -8,7 +8,7 @@ import { Icon } from "astro-icon/components";
     <div class="flex justify-center py-4">
       <img
         class="mb-4 max-h-10 lg:mb-0 lg:max-h-16"
-        src="../../public/logo_emerald.png"
+        src="/logo_emerald.png"
         alt="logo"
       />
     </div>
@@ -232,7 +232,12 @@ import { Icon } from "astro-icon/components";
                 "Crece tu negocio sin aumentar gastos operativos ni depender de más empleados",
             },
             {
-              icon: <Icon name="mdi:checkbox-marked-circle-auto-outline" class="size-6" />,
+              icon: (
+                <Icon
+                  name="mdi:checkbox-marked-circle-auto-outline"
+                  class="size-6"
+                />
+              ),
               title: "ROI Comprobable",
               description:
                 "Inversión que genera retorno real con seguimiento transparente de resultados",
@@ -264,7 +269,7 @@ import { Icon } from "astro-icon/components";
       </div>
 
       <div
-        class="bg-emerald/10 border-emerald/20 relative overflow-hidden rounded-3xl border p-6 lg:p-12 text-center backdrop-blur-sm"
+        class="bg-emerald/10 border-emerald/20 relative overflow-hidden rounded-3xl border p-6 text-center backdrop-blur-sm lg:p-12"
       >
         <div
           class="from-emerald/5 to-emerald/10 absolute inset-0 bg-gradient-to-r"
@@ -287,7 +292,10 @@ import { Icon } from "astro-icon/components";
           class="text-light-green/80 flex flex-wrap items-center justify-center gap-8"
         >
           <div class="flex items-center space-x-2">
-            <Icon name="mdi:checkbox-marked-circle-auto-outline" class="text-emerald h-5 w-5" />
+            <Icon
+              name="mdi:checkbox-marked-circle-auto-outline"
+              class="text-emerald h-5 w-5"
+            />
             <span class="font-medium">Sin contratos de permanencia</span>
           </div>
           <div class="flex items-center space-x-2">
@@ -304,116 +312,143 @@ import { Icon } from "astro-icon/components";
   </section>
 
   {/* How we deliver */}
- <section class="bg-gradient-to-b from-white to-light-green/30 py-16 md:py-24">
-      <div class="container mx-auto px-6 lg:px-8">
-        {/* Header */}
-        <div class="text-center mb-12 md:mb-20 animate-fade-in-up">
-          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark-gray mb-6 leading-tight">
-            Nuestro <span class="text-emerald">método probado</span> paso a paso
-          </h2>
-          <p class="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Transformamos tu proceso de ventas con un sistema que funciona las 24 horas, 
-            los 7 días de la semana, generando leads calificados constantemente.
-          </p>
-        </div>
+  <section class="to-light-green/30 bg-gradient-to-b from-white py-16 md:py-24">
+    <div class="container mx-auto px-6 lg:px-8">
+      {/* Header */}
+      <div class="animate-fade-in-up mb-12 text-center md:mb-20">
+        <h2
+          class="text-dark-gray mb-6 text-3xl leading-tight font-bold md:text-4xl lg:text-5xl"
+        >
+          Nuestro <span class="text-emerald">método probado</span> paso a paso
+        </h2>
+        <p
+          class="mx-auto max-w-4xl text-lg leading-relaxed text-gray-600 md:text-xl"
+        >
+          Transformamos tu proceso de ventas con un sistema que funciona las 24
+          horas, los 7 días de la semana, generando leads calificados
+          constantemente.
+        </p>
+      </div>
 
-        {/* Steps for Mobile */}
-        <div class="md:hidden space-y-8">
-          {[
-    {
-      number: "01",
-      title: "Análisis y Estrategia",
-      description: "Estudiamos tu negocio, mercado y competencia para crear una estrategia de captación personalizada que genere leads de alta calidad desde el primer día.",
-      icon: <Icon name="mdi:target" class="w-6 h-6" />,
-      delay: "0s"
-    },
-    {
-      number: "02", 
-      title: "Creación de Campañas",
-      description: "Diseñamos y lanzamos campañas de Meta Ads optimizadas para atraer tu cliente ideal, con creativos que convierten y audiencias precisas.",
-      icon: <Icon name="mdi:electricity" class="w-6 h-6" />,
-      delay: "0.2s"
-    },
-    {
-      number: "03",
-      title: "Automatización y CRM",
-      description: "Implementamos bots inteligentes, sistemas de precalificación automática y CRM personalizado que gestiona leads las 24/7 sin intervención manual.",
-      icon: <Icon name="mdi:checkbox-marked-circle-auto-outline" class="w-6 h-6 text-emerald" />,
-      delay: "0.4s"
-    },
-    {
-      number: "04",
-      title: "Optimización y Escala",
-      description: "Monitoreamos, ajustamos y escalamos tu sistema basado en datos reales para maximizar el ROI y garantizar crecimiento sostenible.",
-      icon: <Icon name="mdi:trending-up" class="w-6 h-6" />,
-      delay: "0.6s"
-    }
-  ].map((step, index) => (
-            <div 
+      {/* Steps for Mobile */}
+      <div class="space-y-8 md:hidden">
+        {
+          [
+            {
+              number: "01",
+              title: "Análisis y Estrategia",
+              description:
+                "Estudiamos tu negocio, mercado y competencia para crear una estrategia de captación personalizada que genere leads de alta calidad desde el primer día.",
+              icon: <Icon name="mdi:target" class="h-6 w-6" />,
+              delay: "0s",
+            },
+            {
+              number: "02",
+              title: "Creación de Campañas",
+              description:
+                "Diseñamos y lanzamos campañas de Meta Ads optimizadas para atraer tu cliente ideal, con creativos que convierten y audiencias precisas.",
+              icon: <Icon name="mdi:electricity" class="h-6 w-6" />,
+              delay: "0.2s",
+            },
+            {
+              number: "03",
+              title: "Automatización y CRM",
+              description:
+                "Implementamos bots inteligentes, sistemas de precalificación automática y CRM personalizado que gestiona leads las 24/7 sin intervención manual.",
+              icon: (
+                <Icon
+                  name="mdi:checkbox-marked-circle-auto-outline"
+                  class="text-emerald h-6 w-6"
+                />
+              ),
+              delay: "0.4s",
+            },
+            {
+              number: "04",
+              title: "Optimización y Escala",
+              description:
+                "Monitoreamos, ajustamos y escalamos tu sistema basado en datos reales para maximizar el ROI y garantizar crecimiento sostenible.",
+              icon: <Icon name="mdi:trending-up" class="h-6 w-6" />,
+              delay: "0.6s",
+            },
+          ].map((step, index) => (
+            <div
               key={index}
-              class="bg-white rounded-2xl p-6 shadow-lg border border-emerald/10 hover:border-emerald/30 transition-all duration-300 animate-fade-in-up"
+              class="border-emerald/10 hover:border-emerald/30 animate-fade-in-up rounded-2xl border bg-white p-6 shadow-lg transition-all duration-300"
               style={{ animationDelay: step.delay }}
             >
               <div class="flex items-start space-x-4">
                 <div class="flex-shrink-0">
-                  <div class="w-12 h-12 bg-emerald rounded-xl flex items-center justify-center text-white font-bold text-lg">
+                  <div class="bg-emerald flex h-12 w-12 items-center justify-center rounded-xl text-lg font-bold text-white">
                     {step.number}
                   </div>
                 </div>
                 <div class="flex-1">
-                  <div class="flex items-center space-x-2 mb-3">
-                    <div class="text-emerald">
-                      {step.icon}
-                    </div>
-                    <h3 class="text-xl font-bold text-dark-gray">
+                  <div class="mb-3 flex items-center space-x-2">
+                    <div class="text-emerald">{step.icon}</div>
+                    <h3 class="text-dark-gray text-xl font-bold">
                       {step.title}
                     </h3>
                   </div>
-                  <p class="text-gray-600 leading-relaxed">
+                  <p class="leading-relaxed text-gray-600">
                     {step.description}
                   </p>
                 </div>
               </div>
             </div>
-          ))}
+          ))
+        }
+      </div>
+
+      {/* Steps for Desktop - Timeline */}
+      <div class="relative hidden md:block">
+        {/* Timeline line */}
+        <div
+          class="from-emerald/20 via-emerald/40 to-emerald/20 absolute left-1/2 h-full w-1 -translate-x-1/2 transform rounded-full bg-gradient-to-b"
+        >
         </div>
 
-        {/* Steps for Desktop - Timeline */}
-        <div class="hidden md:block relative">
-          {/* Timeline line */}
-          <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-emerald/20 via-emerald/40 to-emerald/20 rounded-full"></div>
-
-          <div class="space-y-16 lg:space-y-24">
-            {[
-    {
-      number: "01",
-      title: "Análisis y Estrategia",
-      description: "Estudiamos tu negocio, mercado y competencia para crear una estrategia de captación personalizada que genere leads de alta calidad desde el primer día.",
-      icon: <Icon name="mdi:target" class="w-6 h-6" />,
-      delay: "0s"
-    },
-    {
-      number: "02", 
-      title: "Creación de Campañas",
-      description: "Diseñamos y lanzamos campañas de Meta Ads optimizadas para atraer tu cliente ideal, con creativos que convierten y audiencias precisas.",
-      icon: <Icon name="mdi:electricity" class="w-6 h-6" />,
-      delay: "0.2s"
-    },
-    {
-      number: "03",
-      title: "Automatización y CRM",
-      description: "Implementamos bots inteligentes, sistemas de precalificación automática y CRM personalizado que gestiona leads las 24/7 sin intervención manual.",
-      icon: <Icon name="mdi:checkbox-marked-circle-auto-outline" class="w-6 h-6 text-emerald" />,
-      delay: "0.4s"
-    },
-    {
-      number: "04",
-      title: "Optimización y Escala",
-      description: "Monitoreamos, ajustamos y escalamos tu sistema basado en datos reales para maximizar el ROI y garantizar crecimiento sostenible.",
-      icon: <Icon name="mdi:trending-up" class="w-6 h-6" />,
-      delay: "0.6s"
-    }
-  ].map((step, index) => (
+        <div class="space-y-16 lg:space-y-24">
+          {
+            [
+              {
+                number: "01",
+                title: "Análisis y Estrategia",
+                description:
+                  "Estudiamos tu negocio, mercado y competencia para crear una estrategia de captación personalizada que genere leads de alta calidad desde el primer día.",
+                icon: <Icon name="mdi:target" class="h-6 w-6" />,
+                delay: "0s",
+              },
+              {
+                number: "02",
+                title: "Creación de Campañas",
+                description:
+                  "Diseñamos y lanzamos campañas de Meta Ads optimizadas para atraer tu cliente ideal, con creativos que convierten y audiencias precisas.",
+                icon: <Icon name="mdi:electricity" class="h-6 w-6" />,
+                delay: "0.2s",
+              },
+              {
+                number: "03",
+                title: "Automatización y CRM",
+                description:
+                  "Implementamos bots inteligentes, sistemas de precalificación automática y CRM personalizado que gestiona leads las 24/7 sin intervención manual.",
+                icon: (
+                  <Icon
+                    name="mdi:checkbox-marked-circle-auto-outline"
+                    class="text-emerald h-6 w-6"
+                  />
+                ),
+                delay: "0.4s",
+              },
+              {
+                number: "04",
+                title: "Optimización y Escala",
+                description:
+                  "Monitoreamos, ajustamos y escalamos tu sistema basado en datos reales para maximizar el ROI y garantizar crecimiento sostenible.",
+                icon: <Icon name="mdi:trending-up" class="h-6 w-6" />,
+                delay: "0.6s",
+              },
+            ].map((step, index) => (
               <div
                 key={index}
                 class={`flex items-center gap-8 lg:gap-16 ${
@@ -423,20 +458,18 @@ import { Icon } from "astro-icon/components";
               >
                 {/* Content */}
                 <div class="flex-1">
-                  <div class="bg-white rounded-2xl p-8 shadow-lg border border-emerald/10 hover:border-emerald/30 transition-all duration-300 hover:shadow-xl relative">
-                    <div class="absolute -top-4 -left-4 w-16 h-16 bg-emerald rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                  <div class="border-emerald/10 hover:border-emerald/30 relative rounded-2xl border bg-white p-8 shadow-lg transition-all duration-300 hover:shadow-xl">
+                    <div class="bg-emerald absolute -top-4 -left-4 flex h-16 w-16 items-center justify-center rounded-full text-xl font-bold text-white shadow-lg">
                       {step.number}
                     </div>
                     <div class="ml-8">
-                      <div class="flex items-center space-x-3 mb-4">
-                        <div class="text-emerald">
-                          {step.icon}
-                        </div>
-                        <h3 class="text-2xl font-bold text-dark-gray">
+                      <div class="mb-4 flex items-center space-x-3">
+                        <div class="text-emerald">{step.icon}</div>
+                        <h3 class="text-dark-gray text-2xl font-bold">
                           {step.title}
                         </h3>
                       </div>
-                      <p class="text-gray-600 leading-relaxed text-lg">
+                      <p class="text-lg leading-relaxed text-gray-600">
                         {step.description}
                       </p>
                     </div>
@@ -444,18 +477,16 @@ import { Icon } from "astro-icon/components";
                 </div>
 
                 {/* Timeline dot */}
-                <div class="hidden lg:flex w-6 h-6 bg-emerald rounded-full flex-shrink-0 shadow-lg z-10 relative">
-                  <div class="w-3 h-3 bg-white rounded-full m-auto"></div>
+                <div class="bg-emerald relative z-10 hidden h-6 w-6 flex-shrink-0 rounded-full shadow-lg lg:flex">
+                  <div class="m-auto h-3 w-3 rounded-full bg-white" />
                 </div>
 
                 {/* Visual element */}
-                <div class="flex-1 hidden lg:block">
-                  <div class="bg-gradient-to-br from-emerald/10 to-emerald/20 rounded-2xl p-8 h-64 flex items-center justify-center">
+                <div class="hidden flex-1 lg:block">
+                  <div class="from-emerald/10 to-emerald/20 flex h-64 items-center justify-center rounded-2xl bg-gradient-to-br p-8">
                     <div class="text-center">
-                      <div class="w-20 h-20 bg-emerald/20 rounded-full flex items-center justify-center mb-4 mx-auto">
-                        <div class="text-emerald">
-                          {step.icon}
-                        </div>
+                      <div class="bg-emerald/20 mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full">
+                        <div class="text-emerald">{step.icon}</div>
                       </div>
                       <p class="text-forest-green font-semibold">
                         Semana {index + 1}
@@ -464,55 +495,70 @@ import { Icon } from "astro-icon/components";
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
+            ))
+          }
         </div>
+      </div>
 
-        {/* Bottom CTA */}
-        <div class="mt-16 md:mt-24 text-center">
-          <div class="bg-gradient-to-r from-emerald/5 to-emerald/10 rounded-3xl p-8 md:p-12 border border-emerald/20">
-            <h3 class="text-2xl md:text-3xl font-bold text-dark-gray mb-4">
-              ¿Listo para comenzar tu transformación digital?
-            </h3>
-            <p class="text-gray-600 mb-8 text-lg max-w-2xl mx-auto">
-              Únete a empresarios que ya están escalando sus ventas con nuestro sistema automatizado
-            </p>
-            <div class="flex items-center justify-center">
-              <button
-                  type="button"
-                  class="flex justify-center items-center transform gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 px-8 py-4 font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-emerald-600 hover:to-emerald-700 hover:shadow-xl"
-                  >
-                  <span>Contáctenos</span>
-                  <Icon
-                      name="mdi:arrow-right"
-                      class="size-5 transition-transform group-hover:translate-x-1"
-                      />
-                      <div
-                          class="absolute inset-0 bg-white opacity-0 transition-opacity group-hover:opacity-10"
-                          >
-                      </div>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Trust indicators */}
-        <div class="mt-12 flex flex-wrap justify-center items-center gap-6 md:gap-8 text-sm text-gray-500">
-          <div class="flex items-center space-x-2">
-            <Icon name="mdi:checkbox-marked-circle-auto-outline" class="w-4 h-4 text-emerald" />
-            <span>Implementación</span>
-          </div>
-          <div class="flex items-center space-x-2">
-            <Icon name="mdi:checkbox-marked-circle-auto-outline" class="w-4 h-4 text-emerald" />
-            <span>Soporte 24/7</span>
-          </div>
-          <div class="flex items-center space-x-2">
-            <Icon name="mdi:checkbox-marked-circle-auto-outline" class="w-4 h-4 text-emerald" />
-            <span>Garantía de resultados</span>
+      {/* Bottom CTA */}
+      <div class="mt-16 text-center md:mt-24">
+        <div
+          class="from-emerald/5 to-emerald/10 border-emerald/20 rounded-3xl border bg-gradient-to-r p-8 md:p-12"
+        >
+          <h3 class="text-dark-gray mb-4 text-2xl font-bold md:text-3xl">
+            ¿Listo para comenzar tu transformación digital?
+          </h3>
+          <p class="mx-auto mb-8 max-w-2xl text-lg text-gray-600">
+            Únete a empresarios que ya están escalando sus ventas con nuestro
+            sistema automatizado
+          </p>
+          <div class="flex items-center justify-center">
+            <button
+              type="button"
+              class="flex transform items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 px-8 py-4 font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-emerald-600 hover:to-emerald-700 hover:shadow-xl"
+            >
+              <span>Contáctenos</span>
+              <Icon
+                name="mdi:arrow-right"
+                class="size-5 transition-transform group-hover:translate-x-1"
+              />
+              <div
+                class="absolute inset-0 bg-white opacity-0 transition-opacity group-hover:opacity-10"
+              >
+              </div>
+            </button>
           </div>
         </div>
       </div>
-    </section>
+
+      {/* Trust indicators */}
+      <div
+        class="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-500 md:gap-8"
+      >
+        <div class="flex items-center space-x-2">
+          <Icon
+            name="mdi:checkbox-marked-circle-auto-outline"
+            class="text-emerald h-4 w-4"
+          />
+          <span>Implementación</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <Icon
+            name="mdi:checkbox-marked-circle-auto-outline"
+            class="text-emerald h-4 w-4"
+          />
+          <span>Soporte 24/7</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <Icon
+            name="mdi:checkbox-marked-circle-auto-outline"
+            class="text-emerald h-4 w-4"
+          />
+          <span>Garantía de resultados</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
   {/* Footer */}
   <footer class="bg-dark-gray py-20">
