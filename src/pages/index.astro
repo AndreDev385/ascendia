@@ -477,9 +477,22 @@ import { Icon } from "astro-icon/components";
             <p class="text-gray-600 mb-8 text-lg max-w-2xl mx-auto">
               Únete a empresarios que ya están escalando sus ventas con nuestro sistema automatizado
             </p>
-            <button class="bg-emerald text-white font-bold text-lg px-10 py-4 rounded-xl hover:bg-forest-green transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-              Empezar
-            </button>
+            <div class="flex items-center justify-center">
+              <button
+                  type="button"
+                  class="flex justify-center items-center transform gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 px-8 py-4 font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-emerald-600 hover:to-emerald-700 hover:shadow-xl"
+                  >
+                  <span>Contáctenos</span>
+                  <Icon
+                      name="mdi:arrow-right"
+                      class="size-5 transition-transform group-hover:translate-x-1"
+                      />
+                      <div
+                          class="absolute inset-0 bg-white opacity-0 transition-opacity group-hover:opacity-10"
+                          >
+                      </div>
+              </button>
+            </div>
           </div>
         </div>
 
