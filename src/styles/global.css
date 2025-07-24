@@ -7,3 +7,44 @@
   --color-dark-gray: #282b2a;
   --color-light-green: #dffef4;
 }
+
+/* Animaciones personalizadas */
+@keyframes emeraldPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(7, 228, 159, 0.4);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(7, 228, 159, 0);
+  }
+}
+
+.animate-emerald-pulse {
+  animation: emeraldPulse 2s infinite;
+}
+
+.bg-client-light-gradient {
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    var(--color-light-green) 30%,
+    #f8fffe 70%,
+    #ffffff 100%
+  );
+}
+
+.bg-client-emerald-gradient {
+  background: linear-gradient(135deg, var(--color-emerald) 0%, #05b87a 100%);
+}
+
+.text-client-emerald-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--color-emerald) 0%,
+    var(--color-forest-green) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

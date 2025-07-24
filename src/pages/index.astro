@@ -1,175 +1,94 @@
 ---
-import RootLayout from "../layouts/RootLayout.astro";
+import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
+
+import AdcendiaLogo from "../assets/Adcendia2.png";
+import RootLayout from "../layouts/RootLayout.astro";
 ---
 
 <RootLayout>
-  <header>
-    <div class="flex justify-center py-4">
-      <img
-        class="mb-4 max-h-10 lg:mb-0 lg:max-h-16"
-        src="/logo_emerald.png"
-        alt="logo"
-      />
-    </div>
-  </header>
-  {/* Hero section */}
+  <!-- Hero -->
   <section
-    class="relative flex min-h-screen bg-gradient-to-br from-slate-50 via-white to-emerald-50 px-4 lg:py-8"
+    id="hero"
+    class="bg-client-light-gradient relative min-h-screen overflow-hidden"
   >
-    {/* Background Elements */}
+    <Image
+      src={AdcendiaLogo}
+      width={AdcendiaLogo.width}
+      height={AdcendiaLogo.height}
+      alt="Adcendia logo"
+      class="absolute top-0 right-0 left-0 z-10 mx-auto h-auto w-full max-w-[400px] lg:max-w-[640px]"
+    />
+    {/* Main Content Container */}
     <div
-      class="bg-grid-slate-100 absolute inset-0 -z-10 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))]"
+      class="relative z-10 flex min-h-screen items-center justify-center px-4 py-16"
     >
-    </div>
-    <div
-      class="absolute top-0 right-0 h-96 w-96 animate-pulse rounded-full bg-emerald-100 opacity-70 mix-blend-multiply blur-xl filter"
-    >
-    </div>
-    <div
-      class="absolute bottom-0 left-0 h-96 w-96 animate-pulse rounded-full bg-blue-100 opacity-70 mix-blend-multiply blur-xl filter delay-1000"
-    >
-    </div>
-
-    <div class="relative z-10 mx-auto w-full max-w-7xl">
-      <div class="grid items-center gap-12 lg:grid-cols-2">
-        {/* Contenido Principal */}
-        <div class="space-y-8">
-          {/* Headline Principal */}
-          <div class="space-y-6">
-            <h1
-              class="text-4xl leading-tight font-bold text-gray-900 lg:text-5xl xl:text-6xl"
-            >
-              Diseñamos estrategias que {" "}
-              <span
-                class="bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent"
-              >
-                impulsan tus ventas
-              </span>{" "}
-            </h1>
-            <p class="max-w-lg text-xl leading-relaxed text-gray-600">
-              Con los tres pilares fundamentales: <strong>Publicidad</strong>, <strong
-                >Email Marketing</strong
-              > y un{" "}
-              <strong>Sistema de ventas</strong>. Te garantizamos conectar con
-              tu cliente ideal, aumentar tus ventas e impulsar tu marca.
-            </p>
-          </div>
-
-          {/* Beneficios Clave */}
-          <div class="space-y-3">
-            {
-              [
-                "Empieza tu estrategia personalizada",
-                "Conecta con tu cliente ideal",
-                "Incrementa tus ventas",
-              ].map((benefit, index) => (
-                <div key={index} class="flex items-center gap-3">
-                  <Icon
-                    name="mdi:checkbox-marked-circle-auto-outline"
-                    class="text-emerald"
-                  />
-                  <span class="font-medium text-gray-700">{benefit}</span>
-                </div>
-              ))
-            }
-          </div>
-
-          {/* CTAs */}
-          <button
-            type="button"
-            class="group relative flex transform items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 px-8 py-4 font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-emerald-600 hover:to-emerald-700 hover:shadow-xl"
+      <div class="mx-auto max-w-6xl text-center">
+        {/* Main Headline */}
+        <h1 class="mb-8">
+          <span
+            class="text-dark-green block text-4xl font-black lg:text-6xl xl:text-7xl"
           >
-            <span>Contáctenos</span>
-            <Icon
-              name="mdi:arrow-right"
-              class="size-5 transition-transform group-hover:translate-x-1"
-            />
-            <div
-              class="absolute inset-0 bg-white opacity-0 transition-opacity group-hover:opacity-10"
-            >
-            </div>
-          </button>
-        </div>
+            Transformamos
+          </span>
+          <span
+            class="text-client-emerald-gradient block text-4xl font-black lg:text-6xl xl:text-7xl"
+          >
+            Visitantes en Clientes que Compran
+          </span>
+        </h1>
 
-        {/* Visual y Elementos Gráficos */}
-        <div class="relative space-y-8">
-          {/* Dashboard Mockup */}
-          <div class="relative">
-            <div
-              class="rounded-2xl border border-gray-100 bg-white p-6 shadow-2xl"
-            >
-              <div class="space-y-4">
-                {/* Header del Dashboard */}
-                <div class="flex items-center justify-between">
-                  <h3 class="font-semibold text-gray-900">Panel de Control</h3>
-                  <div class="flex gap-2">
-                    <div class="h-3 w-3 rounded-full bg-red-400"></div>
-                    <div class="h-3 w-3 rounded-full bg-yellow-400"></div>
-                    <div class="h-3 w-3 rounded-full bg-green-400"></div>
-                  </div>
-                </div>
+        {/* Subtitle */}
+        <p
+          class="text-dark-gray mx-auto mb-12 max-w-4xl text-xl leading-relaxed lg:text-2xl"
+        >
+          Con tres pilares fundamentales
+          <span class="font-bold text-blue-700"> Publicidad Digital</span>,
+          <span class="font-bold text-purple-700"> Email Marketing</span> y
+          <span class="font-bold text-orange-500"> Sistemas de Ventas. </span>
+          Te garantizamos conectar con tu cliente ideal, aumentar tus ventas e impulsar
+          tu marca.
+        </p>
 
-                {/* Métricas */}
-                <div class="grid grid-cols-2 gap-4">
-                  <div class="rounded-lg bg-emerald-50 p-4">
-                    <div class="mb-2 flex items-center gap-2">
-                      <Icon
-                        name="mdi:target"
-                        class="h-5 w-5 text-emerald-600"
-                        <span
-                        class="text-sm font-medium text-emerald-800"
-                        >Conversiones</Icon
-                      >
-                    </div>
-                    <div class="text-2xl font-bold text-emerald-900">+347%</div>
-                  </div>
-                  <div class="rounded-lg bg-blue-50 p-4">
-                    <div class="mb-2 flex items-center gap-2">
-                      <Icon name="mdi:email" class="h-5 w-5 text-blue-600" />
-                      <span class="text-sm font-medium text-blue-800"
-                        >Email ROI</span
-                      >
-                    </div>
-                    <div class="text-2xl font-bold text-blue-900">4,200%</div>
-                  </div>
-                </div>
-
-                {/* Gráfico Simulado */}
-                <div class="space-y-2">
-                  <div class="flex justify-between text-sm text-gray-600">
-                    <span>Ventas este mes</span>
-                    <span class="font-semibold text-emerald-600">↗ +89%</span>
-                  </div>
-                  <div class="h-2 overflow-hidden rounded-full bg-gray-200">
-                    <div
-                      class="h-full w-4/5 animate-pulse rounded-full bg-gradient-to-r from-emerald-500 to-blue-500"
-                    >
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Elementos flotantes */}
-            <div
-              class="absolute -top-4 -right-4 animate-bounce rounded-full bg-emerald-500 p-3 text-white shadow-lg"
-            >
-              <Icon name="mdi:trending-up" class="size-6" />
-            </div>
-            <div
-              class="absolute -bottom-4 -left-4 animate-bounce rounded-full bg-blue-500 p-3 text-white shadow-lg delay-500"
-            >
-              <Icon name="mdi:email" class="size-6" />
+        <button
+          class="group bg--emerald shadow-emeral animate-emerald-pulse relative overflow-hidden rounded-2xl p-1 transition-all duration-300 hover:scale-110"
+        >
+          <div
+            class="bg-client-emerald-gradient relative rounded-xl px-12 py-6 transition-all duration-300"
+          >
+            <div class="flex items-center gap-3">
+              <span class="text-xl font-black text-white">CONTÁCTENOS</span>
             </div>
           </div>
-        </div>
+
+          {/* Animated Border Glow */}
+          <div
+            class="bg-emerald absolute inset-0 rounded-2xl opacity-0 blur-xl transition-opacity"
+          >
+          </div>
+
+          {/* Shine Effect */}
+          <div
+            class="absolute inset-0 -translate-x-full rounded-2xl bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-1000 group-hover:translate-x-full"
+          >
+          </div>
+        </button>
       </div>
+    </div>
+
+    <div
+      class="absolute bottom-10 left-1/2 z-100 -translate-x-1/2 transform animate-bounce"
+    >
+      <a href="#benefits" class="flex flex-col items-center justify-center">
+        <span class="text-sm text-gray-600">Ver más</span>
+        <Icon name="mdi:keyboard-arrow-down" class="size-8 text-gray-600" />
+      </a>
     </div>
   </section>
 
-  {/* What would you expect */}
+  <!-- What would you expect -->
   <section
+    id="benefits"
     class="from-dark-gray to-forest-green relative overflow-hidden bg-gradient-to-br py-20"
   >
     {/* Background decorative elements */}
@@ -184,7 +103,7 @@ import { Icon } from "astro-icon/components";
 
     <div class="relative z-10 container mx-auto px-6">
       {/* Header */}
-      <div class="animate-fade-in-up mb-16 text-center">
+      <div class="mb-16 text-center">
         <h2
           class="mt-6 mb-4 text-4xl leading-tight font-bold text-white md:text-5xl"
         >
@@ -245,8 +164,7 @@ import { Icon } from "astro-icon/components";
           ].map((benefit, index) => (
             <div
               key={index}
-              class="group hover:border-emerald/50 animate-fade-in-up rounded-2xl border border-white/20 bg-white/10 p-8 shadow-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:bg-white/15 hover:shadow-2xl"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              class="group hover:border-emerald/50 rounded-2xl border border-white/20 bg-white/10 p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:bg-white/15 hover:shadow-2xl"
             >
               <div class="flex items-start space-x-4">
                 <div class="flex-shrink-0">
@@ -269,7 +187,7 @@ import { Icon } from "astro-icon/components";
       </div>
 
       <div
-        class="bg-emerald/10 border-emerald/20 relative overflow-hidden rounded-3xl border p-6 text-center backdrop-blur-sm lg:p-12"
+        class="bg-emerald/10 border-emerald/20 relative overflow-hidden rounded-3xl border p-6 text-center lg:p-12"
       >
         <div
           class="from-emerald/5 to-emerald/10 absolute inset-0 bg-gradient-to-r"
@@ -311,11 +229,14 @@ import { Icon } from "astro-icon/components";
     </div>
   </section>
 
-  {/* How we deliver */}
-  <section class="to-light-green/30 bg-gradient-to-b from-white py-16 md:py-24">
+  <!-- How we deliver -->
+  <section
+    id="deliver"
+    class="to-light-green/30 bg-gradient-to-b from-white py-16 md:py-24"
+  >
     <div class="container mx-auto px-6 lg:px-8">
       {/* Header */}
-      <div class="animate-fade-in-up mb-12 text-center md:mb-20">
+      <div class="mb-12 text-center md:mb-20">
         <h2
           class="text-dark-gray mb-6 text-3xl leading-tight font-bold md:text-4xl lg:text-5xl"
         >
@@ -374,8 +295,7 @@ import { Icon } from "astro-icon/components";
           ].map((step, index) => (
             <div
               key={index}
-              class="border-emerald/10 hover:border-emerald/30 animate-fade-in-up rounded-2xl border bg-white p-6 shadow-lg transition-all duration-300"
-              style={{ animationDelay: step.delay }}
+              class="border-emerald/10 hover:border-emerald/30 rounded-2xl border bg-white p-6 shadow-lg transition-all duration-300"
             >
               <div class="flex items-start space-x-4">
                 <div class="flex-shrink-0">
@@ -418,6 +338,7 @@ import { Icon } from "astro-icon/components";
                   "Estudiamos tu negocio, mercado y competencia para crear una estrategia de captación personalizada que genere leads de alta calidad desde el primer día.",
                 icon: <Icon name="mdi:target" class="h-6 w-6" />,
                 delay: "0s",
+                image: "analysis&strategy.jpg",
               },
               {
                 number: "02",
@@ -426,6 +347,7 @@ import { Icon } from "astro-icon/components";
                   "Diseñamos y lanzamos campañas de Meta Ads optimizadas para atraer tu cliente ideal, con creativos que convierten y audiencias precisas.",
                 icon: <Icon name="mdi:electricity" class="h-6 w-6" />,
                 delay: "0.2s",
+                image: "ads.png",
               },
               {
                 number: "03",
@@ -439,6 +361,7 @@ import { Icon } from "astro-icon/components";
                   />
                 ),
                 delay: "0.4s",
+                image: "crm.png",
               },
               {
                 number: "04",
@@ -447,14 +370,14 @@ import { Icon } from "astro-icon/components";
                   "Monitoreamos, ajustamos y escalamos tu sistema basado en datos reales para maximizar el ROI y garantizar crecimiento sostenible.",
                 icon: <Icon name="mdi:trending-up" class="h-6 w-6" />,
                 delay: "0.6s",
+                image: "roi.jpg",
               },
             ].map((step, index) => (
               <div
                 key={index}
                 class={`flex items-center gap-8 lg:gap-16 ${
                   index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-                } animate-fade-in-up`}
-                style={{ animationDelay: step.delay }}
+                }`}
               >
                 {/* Content */}
                 <div class="flex-1">
@@ -483,16 +406,11 @@ import { Icon } from "astro-icon/components";
 
                 {/* Visual element */}
                 <div class="hidden flex-1 lg:block">
-                  <div class="from-emerald/10 to-emerald/20 flex h-64 items-center justify-center rounded-2xl bg-gradient-to-br p-8">
-                    <div class="text-center">
-                      <div class="bg-emerald/20 mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full">
-                        <div class="text-emerald">{step.icon}</div>
-                      </div>
-                      <p class="text-forest-green font-semibold">
-                        Semana {index + 1}
-                      </p>
-                    </div>
-                  </div>
+                  <img
+                    class="h-auto w-full rounded-2xl"
+                    src={step.image}
+                    alt={step.title}
+                  />
                 </div>
               </div>
             ))
@@ -560,13 +478,19 @@ import { Icon } from "astro-icon/components";
     </div>
   </section>
 
-  {/* Footer */}
-  <footer class="bg-dark-gray py-20">
+  <!-- Footer -->
+  <footer class="bg-dark-gray py-8">
     <div class="container mx-auto px-6 lg:px-8">
-      <div class="border-t border-gray-700 pt-8">
-        <div class="grid gap-8 md:grid-cols-4">
+      <div class="pt-8">
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
           <div>
-            <h3 class="text-emerald mb-4 text-2xl font-bold">Ascendia</h3>
+            <Image
+              src={AdcendiaLogo}
+              width={AdcendiaLogo.width}
+              height={AdcendiaLogo.height}
+              alt="Adcendia logo"
+              class="max-w-80"
+            />
             <p class="text-gray-400">
               Transformamos visitantes en clientes reales con tecnología de
               vanguardia y estrategias probadas.
@@ -582,21 +506,50 @@ import { Icon } from "astro-icon/components";
             </ul>
           </div>
           <div>
-            <h4 class="mb-4 font-bold text-white">Recursos</h4>
+            <h4 class="mb-4 font-bold text-white">Redes Sociales</h4>
             <ul class="space-y-2 text-gray-400">
-              <li>Casos de Éxito</li>
-              <li>Blog</li>
-              <li>Webinars</li>
-              <li>Guías Gratuitas</li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="mb-4 font-bold text-white">Empresa</h4>
-            <ul class="space-y-2 text-gray-400">
-              <li>Sobre Nosotros</li>
-              <li>Equipo</li>
-              <li>Carreras</li>
-              <li>Contacto</li>
+              {
+                [
+                  {
+                    href: "https://www.instagram.com/adcendia?igsh=dmJ5ZGVpeGI4djY5",
+                    label: "Instagram",
+                    icon: <Icon class="size-6" name="mdi:instagram" />,
+                  },
+
+                  {
+                    href: "https://www.facebook.com/profile.php?id=61576799478005",
+                    label: "Facebook",
+                    icon: <Icon class="size-6" name="mdi:facebook" />,
+                  },
+                  {
+                    href: "https://www.tiktok.com/@adcendia?_t=ZM-8xfpmEaOFdN&_r=1",
+                    label: "TikTok",
+                    icon: (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M12.525.02c1.31-.02 2.61-.01 3.91-.02c.08 1.53.63 3.09 1.75 4.17c1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97c-.57-.26-1.1-.59-1.62-.93c-.01 2.92.01 5.84-.02 8.75c-.08 1.4-.54 2.79-1.35 3.94c-1.31 1.92-3.58 3.17-5.91 3.21c-1.43.08-2.86-.31-4.08-1.03c-2.02-1.19-3.44-3.37-3.65-5.71c-.02-.5-.03-1-.01-1.49c.18-1.9 1.12-3.72 2.58-4.96c1.66-1.44 3.98-2.13 6.15-1.72c.02 1.48-.04 2.96-.04 4.44c-.99-.32-2.15-.23-3.02.37c-.63.41-1.11 1.04-1.36 1.75c-.21.51-.15 1.07-.14 1.61c.24 1.64 1.82 3.02 3.5 2.87c1.12-.01 2.19-.66 2.77-1.61c.19-.33.4-.67.41-1.06c.1-1.79.06-3.57.07-5.36c.01-4.03-.01-8.05.02-12.07"
+                        />
+                      </svg>
+                    ),
+                  },
+                ].map((o) => (
+                  <li>
+                    <a
+                      target="_blank"
+                      class="hover:text-emerald flex items-center gap-2 hover:scale-105"
+                      href={o.href}
+                    >
+                      {o.icon} {o.label}
+                    </a>
+                  </li>
+                ))
+              }
             </ul>
           </div>
         </div>
@@ -604,10 +557,7 @@ import { Icon } from "astro-icon/components";
         <div
           class="mt-12 border-t border-gray-700 pt-8 text-center text-gray-400"
         >
-          <p>
-            &copy; 2024 Ascendia. Todos los derechos reservados. Transformando
-            negocios desde 2020.
-          </p>
+          <p>&copy; 2024 Adcendia. Todos los derechos reservados</p>
         </div>
       </div>
     </div>
