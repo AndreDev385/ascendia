@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 
 import AdcendiaLogo from "../assets/Adcendia2.png";
+import AdcendiaEmerald from "../assets/img2.png";
 import RootLayout from "../layouts/RootLayout.astro";
 ---
 
@@ -17,7 +18,7 @@ import RootLayout from "../layouts/RootLayout.astro";
       width={AdcendiaLogo.width}
       height={AdcendiaLogo.height}
       alt="Adcendia logo"
-      class="absolute top-0 right-0 left-0 z-10 mx-auto h-auto w-full max-w-[400px] lg:max-w-[640px]"
+      class="absolute top-0 right-0 left-0 z-10 mx-auto h-auto w-full max-w-[400px] lg:max-w-[640px] animate__animated animate__fadeIn animate__slower"
     />
     {/* Main Content Container */}
     <div
@@ -25,7 +26,7 @@ import RootLayout from "../layouts/RootLayout.astro";
     >
       <div class="mx-auto max-w-6xl text-center">
         {/* Main Headline */}
-        <h1 class="mb-8">
+        <h1 class="mb-8 animate__animated animate__fadeIn animate__delay-.5s">
           <span
             class="text-dark-green block text-4xl font-black lg:text-6xl xl:text-7xl"
           >
@@ -40,7 +41,7 @@ import RootLayout from "../layouts/RootLayout.astro";
 
         {/* Subtitle */}
         <p
-          class="text-dark-gray mx-auto mb-12 max-w-4xl text-xl leading-relaxed lg:text-2xl"
+          class="text-dark-gray mx-auto mb-12 max-w-4xl text-xl leading-relaxed lg:text-2xl animate__animated animate__fadeIn animate__slow"
         >
           Con tres pilares fundamentales
           <span class="font-bold text-blue-700"> Publicidad Digital</span>,
@@ -51,7 +52,7 @@ import RootLayout from "../layouts/RootLayout.astro";
         </p>
 
         <button
-          class="group bg--emerald shadow-emeral animate-emerald-pulse relative overflow-hidden rounded-2xl p-1 transition-all duration-300 hover:scale-110"
+          class="bg-emerald shadow-emeral relative overflow-hidden rounded-2xl p-1 hover:scale-110 animate__animated animate_fast animate__pulse animate__repeat-3"
         >
           <div
             class="bg-client-emerald-gradient relative rounded-xl px-12 py-6 transition-all duration-300"
@@ -485,11 +486,11 @@ import RootLayout from "../layouts/RootLayout.astro";
         <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
           <div>
             <Image
-              src={AdcendiaLogo}
-              width={AdcendiaLogo.width}
-              height={AdcendiaLogo.height}
+              src={AdcendiaEmerald}
+              width={AdcendiaEmerald.width}
+              height={AdcendiaEmerald.height}
               alt="Adcendia logo"
-              class="max-w-80"
+              class="max-w-96 mb-8"
             />
             <p class="text-gray-400">
               Transformamos visitantes en clientes reales con tecnología de

@@ -12,6 +12,7 @@
   "dependencies": {
     "@iconify-json/mdi": "^1.2.3",
     "@tailwindcss/vite": "^4.1.11",
+    "animate.css": "^4.1.1",
     "astro": "^5.10.1",
     "astro-icon": "^1.1.5",
     "sharp": "^0.34.3",
