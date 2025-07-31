@@ -18,7 +18,7 @@ import RootLayout from "../layouts/RootLayout.astro";
       width={AdcendiaLogo.width}
       height={AdcendiaLogo.height}
       alt="Adcendia logo"
-      class="absolute top-0 right-0 left-0 z-10 mx-auto h-auto w-full max-w-[400px] lg:max-w-[640px] animate__animated animate__fadeIn animate__slower"
+      class="animate__animated animate__fadeIn animate__slower absolute top-0 right-0 left-0 z-10 mx-auto h-auto w-full max-w-[400px] lg:max-w-[640px]"
     />
     {/* Main Content Container */}
     <div
@@ -26,7 +26,7 @@ import RootLayout from "../layouts/RootLayout.astro";
     >
       <div class="mx-auto max-w-6xl text-center">
         {/* Main Headline */}
-        <h1 class="mb-8 animate__animated animate__fadeIn animate__delay-.5s">
+        <h1 class="animate__animated animate__fadeIn animate__delay-.5s mb-8">
           <span
             class="text-dark-green block text-4xl font-black lg:text-6xl xl:text-7xl"
           >
@@ -41,7 +41,7 @@ import RootLayout from "../layouts/RootLayout.astro";
 
         {/* Subtitle */}
         <p
-          class="text-dark-gray mx-auto mb-12 max-w-4xl text-xl leading-relaxed lg:text-2xl animate__animated animate__fadeIn animate__slow"
+          class="text-dark-gray animate__animated animate__fadeIn animate__slow mx-auto mb-12 max-w-4xl text-xl leading-relaxed lg:text-2xl"
         >
           Con tres pilares fundamentales
           <span class="font-bold text-blue-700"> Publicidad Digital</span>,
@@ -52,284 +52,212 @@ import RootLayout from "../layouts/RootLayout.astro";
         </p>
 
         <button
-          class="bg-emerald shadow-emeral relative overflow-hidden rounded-2xl p-1 hover:scale-110 animate__animated animate_fast animate__pulse animate__repeat-3"
+          class="bg-emerald shadow-emeral animate__animated animate_fast animate__pulse animate__repeat-3 relative overflow-hidden rounded-2xl p-1 hover:scale-110"
         >
-          <div
-            class="bg-client-emerald-gradient relative rounded-xl px-12 py-6 transition-all duration-300"
+          <a
+            target="_blank"
+            href="https://wa.me/17683681603?text=%22Hola%20chicos%20%F0%9F%91%8B%F0%9F%8F%BB%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20servicio%20Adcen%20Core%22"
           >
-            <div class="flex items-center gap-3">
-              <span class="text-xl font-black text-white">CONTÁCTENOS</span>
-            </div>
-          </div>
-
-          {/* Animated Border Glow */}
-          <div
-            class="bg-emerald absolute inset-0 rounded-2xl opacity-0 blur-xl transition-opacity"
-          >
-          </div>
-
-          {/* Shine Effect */}
-          <div
-            class="absolute inset-0 -translate-x-full rounded-2xl bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-1000 group-hover:translate-x-full"
-          >
-          </div>
-        </button>
-      </div>
-    </div>
-
-    <div
-      class="absolute bottom-10 left-1/2 z-100 -translate-x-1/2 transform animate-bounce"
-    >
-      <a href="#benefits" class="flex flex-col items-center justify-center">
-        <span class="text-sm text-gray-600">Ver más</span>
-        <Icon name="mdi:keyboard-arrow-down" class="size-8 text-gray-600" />
-      </a>
-    </div>
-  </section>
-
-  <!-- What would you expect -->
-  <section
-    id="benefits"
-    class="from-dark-gray to-forest-green relative overflow-hidden bg-gradient-to-br py-20"
-  >
-    {/* Background decorative elements */}
-    <div
-      class="bg-emerald/10 absolute top-0 left-0 h-72 w-72 rounded-full blur-3xl"
-    >
-    </div>
-    <div
-      class="bg-emerald/5 absolute right-0 bottom-0 h-96 w-96 rounded-full blur-3xl"
-    >
-    </div>
-
-    <div class="relative z-10 container mx-auto px-6">
-      {/* Header */}
-      <div class="mb-16 text-center">
-        <h2
-          class="mt-6 mb-4 text-4xl leading-tight font-bold text-white md:text-5xl"
-        >
-          Del Caos a las
-          <span class="text-emerald block">Conversiones Reales</span>
-        </h2>
-        <p class="text-light-green mx-auto max-w-3xl text-xl leading-relaxed">
-          Sistemas personalizados que transforman tu negocio en una máquina de
-          ventas
-        </p>
-      </div>
-
-      {/* Benefits Grid */}
-      <div class="mb-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {
-          [
-            {
-              icon: <Icon name="mdi:users" class="size-6" />,
-              title: "Leads Calificados",
-              description:
-                "Prospectos reales con intención de compra, no solo tráfico sin conversión",
-            },
-            {
-              icon: <Icon name="mdi:calendar" class="size-6" />,
-              title: "Agenda Llena de Oportunidades",
-              description:
-                "Citas programadas automáticamente con clientes potenciales de alto valor",
-            },
-            {
-              icon: <Icon name="mdi:robot" class="size-6" />,
-              title: "Bots Inteligentes 24/7",
-              description:
-                "Precalificación automática y respuestas instantáneas sin intervención manual",
-            },
-            {
-              icon: <Icon name="mdi:trending-up" class="size-6" />,
-              title: "CRM y Seguimiento Automatizado",
-              description:
-                "Sistema completo de gestión con embudos personalizados y seguimiento por WhatsApp",
-            },
-            {
-              icon: <Icon name="mdi:shield" class="size-6" />,
-              title: "Escalabilidad Sin Contratar Personal",
-              description:
-                "Crece tu negocio sin aumentar gastos operativos ni depender de más empleados",
-            },
-            {
-              icon: (
-                <Icon
-                  name="mdi:checkbox-marked-circle-auto-outline"
-                  class="size-6"
-                />
-              ),
-              title: "ROI Comprobable",
-              description:
-                "Inversión que genera retorno real con seguimiento transparente de resultados",
-            },
-          ].map((benefit, index) => (
             <div
-              key={index}
-              class="group hover:border-emerald/50 rounded-2xl border border-white/20 bg-white/10 p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:bg-white/15 hover:shadow-2xl"
+              class="bg-client-emerald-gradient relative rounded-xl px-12 py-6 transition-all duration-300"
             >
-              <div class="flex items-start space-x-4">
-                <div class="flex-shrink-0">
-                  <div class="bg-emerald/20 text-emerald group-hover:bg-emerald flex h-12 w-12 items-center justify-center rounded-xl transition-colors duration-300 group-hover:text-white">
-                    {benefit.icon}
-                  </div>
-                </div>
-                <div class="flex-1">
-                  <h3 class="group-hover:text-emerald mb-3 text-lg font-bold text-white transition-colors duration-300">
-                    {benefit.title}
-                  </h3>
-                  <p class="text-light-green/80 leading-relaxed">
-                    {benefit.description}
-                  </p>
-                </div>
+              <div class="flex items-center gap-3">
+                <span class="text-xl font-black text-white">CONTÁCTENOS</span>
               </div>
             </div>
-          ))
-        }
+
+            {/* Animated Border Glow */}
+            <div
+              class="bg-emerald absolute inset-0 rounded-2xl opacity-0 blur-xl transition-opacity"
+            >
+            </div>
+
+            {/* Shine Effect */}
+            <div
+              class="absolute inset-0 -translate-x-full rounded-2xl bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-1000 group-hover:translate-x-full"
+            >
+            </div>
+          </a>
+        </button>
       </div>
 
       <div
-        class="bg-emerald/10 border-emerald/20 relative overflow-hidden rounded-3xl border p-6 text-center lg:p-12"
+        class="absolute bottom-10 left-1/2 z-100 -translate-x-1/2 transform animate-bounce"
       >
-        <div
-          class="from-emerald/5 to-emerald/10 absolute inset-0 bg-gradient-to-r"
-        >
-        </div>
-        <div class="relative z-10">
-          <h3 class="mb-4 text-3xl font-bold text-white md:text-4xl">
-            ¿Listo para Dejar de Improvisar?
-          </h3>
-          <p class="text-light-green mx-auto max-w-2xl text-lg">
-            No más campañas que no convierten. No más procesos manuales. Solo
-            resultados que escalan tu negocio.
-          </p>
-        </div>
-      </div>
-
-      {/* Trust indicators */}
-      <div class="mt-16 text-center">
-        <div
-          class="text-light-green/80 flex flex-wrap items-center justify-center gap-8"
-        >
-          <div class="flex items-center space-x-2">
-            <Icon
-              name="mdi:checkbox-marked-circle-auto-outline"
-              class="text-emerald h-5 w-5"
-            />
-            <span class="font-medium">Sin contratos de permanencia</span>
-          </div>
-          <div class="flex items-center space-x-2">
-            <Icon name="mdi:shield" class="text-emerald h-5 w-5" />
-            <span class="font-medium">Garantía de resultados</span>
-          </div>
-          <div class="flex items-center space-x-2">
-            <Icon name="mdi:trending-up" class="text-emerald h-5 w-5" />
-            <span class="font-medium">ROI desde el primer mes</span>
-          </div>
-        </div>
+        <a href="#benefits" class="flex flex-col items-center justify-center">
+          <span class="text-sm text-gray-600">Ver más</span>
+          <Icon name="mdi:keyboard-arrow-down" class="size-8 text-gray-600" />
+        </a>
       </div>
     </div>
-  </section>
 
-  <!-- How we deliver -->
-  <section
-    id="deliver"
-    class="to-light-green/30 bg-gradient-to-b from-white py-16 md:py-24"
-  >
-    <div class="container mx-auto px-6 lg:px-8">
-      {/* Header */}
-      <div class="mb-12 text-center md:mb-20">
-        <h2
-          class="text-dark-gray mb-6 text-3xl leading-tight font-bold md:text-4xl lg:text-5xl"
-        >
-          Nuestro <span class="text-emerald">método probado</span> paso a paso
-        </h2>
-        <p
-          class="mx-auto max-w-4xl text-lg leading-relaxed text-gray-600 md:text-xl"
-        >
-          Transformamos tu proceso de ventas con un sistema que funciona las 24
-          horas, los 7 días de la semana, generando leads calificados
-          constantemente.
-        </p>
+    <!-- What would you expect -->
+    <section
+      id="benefits"
+      class="from-dark-gray to-forest-green relative overflow-hidden bg-gradient-to-br py-20"
+    >
+      {/* Background decorative elements */}
+      <div
+        class="bg-emerald/10 absolute top-0 left-0 h-72 w-72 rounded-full blur-3xl"
+      >
+      </div>
+      <div
+        class="bg-emerald/5 absolute right-0 bottom-0 h-96 w-96 rounded-full blur-3xl"
+      >
       </div>
 
-      {/* Steps for Mobile */}
-      <div class="space-y-8 md:hidden">
-        {
-          [
-            {
-              number: "01",
-              title: "Análisis y Estrategia",
-              description:
-                "Estudiamos tu negocio, mercado y competencia para crear una estrategia de captación personalizada que genere leads de alta calidad desde el primer día.",
-              icon: <Icon name="mdi:target" class="h-6 w-6" />,
-              delay: "0s",
-            },
-            {
-              number: "02",
-              title: "Creación de Campañas",
-              description:
-                "Diseñamos y lanzamos campañas de Meta Ads optimizadas para atraer tu cliente ideal, con creativos que convierten y audiencias precisas.",
-              icon: <Icon name="mdi:electricity" class="h-6 w-6" />,
-              delay: "0.2s",
-            },
-            {
-              number: "03",
-              title: "Automatización y CRM",
-              description:
-                "Implementamos bots inteligentes, sistemas de precalificación automática y CRM personalizado que gestiona leads las 24/7 sin intervención manual.",
-              icon: (
-                <Icon
-                  name="mdi:checkbox-marked-circle-auto-outline"
-                  class="text-emerald h-6 w-6"
-                />
-              ),
-              delay: "0.4s",
-            },
-            {
-              number: "04",
-              title: "Optimización y Escala",
-              description:
-                "Monitoreamos, ajustamos y escalamos tu sistema basado en datos reales para maximizar el ROI y garantizar crecimiento sostenible.",
-              icon: <Icon name="mdi:trending-up" class="h-6 w-6" />,
-              delay: "0.6s",
-            },
-          ].map((step, index) => (
-            <div
-              key={index}
-              class="border-emerald/10 hover:border-emerald/30 rounded-2xl border bg-white p-6 shadow-lg transition-all duration-300"
-            >
-              <div class="flex items-start space-x-4">
-                <div class="flex-shrink-0">
-                  <div class="bg-emerald flex h-12 w-12 items-center justify-center rounded-xl text-lg font-bold text-white">
-                    {step.number}
-                  </div>
-                </div>
-                <div class="flex-1">
-                  <div class="mb-3 flex items-center space-x-2">
-                    <div class="text-emerald">{step.icon}</div>
-                    <h3 class="text-dark-gray text-xl font-bold">
-                      {step.title}
-                    </h3>
-                  </div>
-                  <p class="leading-relaxed text-gray-600">
-                    {step.description}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))
-        }
-      </div>
-
-      {/* Steps for Desktop - Timeline */}
-      <div class="relative hidden md:block">
-        {/* Timeline line */}
-        <div
-          class="from-emerald/20 via-emerald/40 to-emerald/20 absolute left-1/2 h-full w-1 -translate-x-1/2 transform rounded-full bg-gradient-to-b"
-        >
+      <div class="relative z-10 container mx-auto px-6">
+        {/* Header */}
+        <div class="mb-16 text-center">
+          <h2
+            class="mt-6 mb-4 text-4xl leading-tight font-bold text-white md:text-5xl"
+          >
+            Del Caos a las
+            <span class="text-emerald block">Conversiones Reales</span>
+          </h2>
+          <p class="text-light-green mx-auto max-w-3xl text-xl leading-relaxed">
+            Sistemas personalizados que transforman tu negocio en una máquina de
+            ventas
+          </p>
         </div>
 
-        <div class="space-y-16 lg:space-y-24">
+        {/* Benefits Grid */}
+        <div class="mb-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {
+            [
+              {
+                icon: <Icon name="mdi:users" class="size-6" />,
+                title: "Leads Calificados",
+                description:
+                  "Prospectos reales con intención de compra, no solo tráfico sin conversión",
+              },
+              {
+                icon: <Icon name="mdi:calendar" class="size-6" />,
+                title: "Agenda Llena de Oportunidades",
+                description:
+                  "Citas programadas automáticamente con clientes potenciales de alto valor",
+              },
+              {
+                icon: <Icon name="mdi:robot" class="size-6" />,
+                title: "Bots Inteligentes 24/7",
+                description:
+                  "Precalificación automática y respuestas instantáneas sin intervención manual",
+              },
+              {
+                icon: <Icon name="mdi:trending-up" class="size-6" />,
+                title: "CRM y Seguimiento Automatizado",
+                description:
+                  "Sistema completo de gestión con embudos personalizados y seguimiento por WhatsApp",
+              },
+              {
+                icon: <Icon name="mdi:shield" class="size-6" />,
+                title: "Escalabilidad Sin Contratar Personal",
+                description:
+                  "Crece tu negocio sin aumentar gastos operativos ni depender de más empleados",
+              },
+              {
+                icon: (
+                  <Icon
+                    name="mdi:checkbox-marked-circle-auto-outline"
+                    class="size-6"
+                  />
+                ),
+                title: "ROI Comprobable",
+                description:
+                  "Inversión que genera retorno real con seguimiento transparente de resultados",
+              },
+            ].map((benefit, index) => (
+              <div
+                key={index}
+                class="group hover:border-emerald/50 rounded-2xl border border-white/20 bg-white/10 p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:bg-white/15 hover:shadow-2xl"
+              >
+                <div class="flex items-start space-x-4">
+                  <div class="flex-shrink-0">
+                    <div class="bg-emerald/20 text-emerald group-hover:bg-emerald flex h-12 w-12 items-center justify-center rounded-xl transition-colors duration-300 group-hover:text-white">
+                      {benefit.icon}
+                    </div>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="group-hover:text-emerald mb-3 text-lg font-bold text-white transition-colors duration-300">
+                      {benefit.title}
+                    </h3>
+                    <p class="text-light-green/80 leading-relaxed">
+                      {benefit.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+
+        <div
+          class="bg-emerald/10 border-emerald/20 relative overflow-hidden rounded-3xl border p-6 text-center lg:p-12"
+        >
+          <div
+            class="from-emerald/5 to-emerald/10 absolute inset-0 bg-gradient-to-r"
+          >
+          </div>
+          <div class="relative z-10">
+            <h3 class="mb-4 text-3xl font-bold text-white md:text-4xl">
+              ¿Listo para Dejar de Improvisar?
+            </h3>
+            <p class="text-light-green mx-auto max-w-2xl text-lg">
+              No más campañas que no convierten. No más procesos manuales. Solo
+              resultados que escalan tu negocio.
+            </p>
+          </div>
+        </div>
+
+        {/* Trust indicators */}
+        <div class="mt-16 text-center">
+          <div
+            class="text-light-green/80 flex flex-wrap items-center justify-center gap-8"
+          >
+            <div class="flex items-center space-x-2">
+              <Icon
+                name="mdi:checkbox-marked-circle-auto-outline"
+                class="text-emerald h-5 w-5"
+              />
+              <span class="font-medium">Sin contratos de permanencia</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <Icon name="mdi:shield" class="text-emerald h-5 w-5" />
+              <span class="font-medium">Garantía de resultados</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <Icon name="mdi:trending-up" class="text-emerald h-5 w-5" />
+              <span class="font-medium">ROI desde el primer mes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How we deliver -->
+    <section
+      id="deliver"
+      class="to-light-green/30 bg-gradient-to-b from-white py-16 md:py-24"
+    >
+      <div class="container mx-auto px-6 lg:px-8">
+        {/* Header */}
+        <div class="mb-12 text-center md:mb-20">
+          <h2
+            class="text-dark-gray mb-6 text-3xl leading-tight font-bold md:text-4xl lg:text-5xl"
+          >
+            Nuestro <span class="text-emerald">método probado</span> paso a paso
+          </h2>
+          <p
+            class="mx-auto max-w-4xl text-lg leading-relaxed text-gray-600 md:text-xl"
+          >
+            Transformamos tu proceso de ventas con un sistema que funciona las
+            24 horas, los 7 días de la semana, generando leads calificados
+            constantemente.
+          </p>
+        </div>
+
+        {/* Steps for Mobile */}
+        <div class="space-y-8 md:hidden">
           {
             [
               {
@@ -339,7 +267,6 @@ import RootLayout from "../layouts/RootLayout.astro";
                   "Estudiamos tu negocio, mercado y competencia para crear una estrategia de captación personalizada que genere leads de alta calidad desde el primer día.",
                 icon: <Icon name="mdi:target" class="h-6 w-6" />,
                 delay: "0s",
-                image: "analysis&strategy.jpg",
               },
               {
                 number: "02",
@@ -348,7 +275,6 @@ import RootLayout from "../layouts/RootLayout.astro";
                   "Diseñamos y lanzamos campañas de Meta Ads optimizadas para atraer tu cliente ideal, con creativos que convierten y audiencias precisas.",
                 icon: <Icon name="mdi:electricity" class="h-6 w-6" />,
                 delay: "0.2s",
-                image: "ads.png",
               },
               {
                 number: "03",
@@ -362,7 +288,6 @@ import RootLayout from "../layouts/RootLayout.astro";
                   />
                 ),
                 delay: "0.4s",
-                image: "crm.png",
               },
               {
                 number: "04",
@@ -371,196 +296,278 @@ import RootLayout from "../layouts/RootLayout.astro";
                   "Monitoreamos, ajustamos y escalamos tu sistema basado en datos reales para maximizar el ROI y garantizar crecimiento sostenible.",
                 icon: <Icon name="mdi:trending-up" class="h-6 w-6" />,
                 delay: "0.6s",
-                image: "roi.jpg",
               },
             ].map((step, index) => (
               <div
                 key={index}
-                class={`flex items-center gap-8 lg:gap-16 ${
-                  index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-                }`}
+                class="border-emerald/10 hover:border-emerald/30 rounded-2xl border bg-white p-6 shadow-lg transition-all duration-300"
               >
-                {/* Content */}
-                <div class="flex-1">
-                  <div class="border-emerald/10 hover:border-emerald/30 relative rounded-2xl border bg-white p-8 shadow-lg transition-all duration-300 hover:shadow-xl">
-                    <div class="bg-emerald absolute -top-4 -left-4 flex h-16 w-16 items-center justify-center rounded-full text-xl font-bold text-white shadow-lg">
+                <div class="flex items-start space-x-4">
+                  <div class="flex-shrink-0">
+                    <div class="bg-emerald flex h-12 w-12 items-center justify-center rounded-xl text-lg font-bold text-white">
                       {step.number}
                     </div>
-                    <div class="ml-8">
-                      <div class="mb-4 flex items-center space-x-3">
-                        <div class="text-emerald">{step.icon}</div>
-                        <h3 class="text-dark-gray text-2xl font-bold">
-                          {step.title}
-                        </h3>
-                      </div>
-                      <p class="text-lg leading-relaxed text-gray-600">
-                        {step.description}
-                      </p>
-                    </div>
                   </div>
-                </div>
-
-                {/* Timeline dot */}
-                <div class="bg-emerald relative z-10 hidden h-6 w-6 flex-shrink-0 rounded-full shadow-lg lg:flex">
-                  <div class="m-auto h-3 w-3 rounded-full bg-white" />
-                </div>
-
-                {/* Visual element */}
-                <div class="hidden flex-1 lg:block">
-                  <img
-                    class="h-auto w-full rounded-2xl"
-                    src={step.image}
-                    alt={step.title}
-                  />
+                  <div class="flex-1">
+                    <div class="mb-3 flex items-center space-x-2">
+                      <div class="text-emerald">{step.icon}</div>
+                      <h3 class="text-dark-gray text-xl font-bold">
+                        {step.title}
+                      </h3>
+                    </div>
+                    <p class="leading-relaxed text-gray-600">
+                      {step.description}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))
           }
         </div>
-      </div>
 
-      {/* Bottom CTA */}
-      <div class="mt-16 text-center md:mt-24">
-        <div
-          class="from-emerald/5 to-emerald/10 border-emerald/20 rounded-3xl border bg-gradient-to-r p-8 md:p-12"
-        >
-          <h3 class="text-dark-gray mb-4 text-2xl font-bold md:text-3xl">
-            ¿Listo para comenzar tu transformación digital?
-          </h3>
-          <p class="mx-auto mb-8 max-w-2xl text-lg text-gray-600">
-            Únete a empresarios que ya están escalando sus ventas con nuestro
-            sistema automatizado
-          </p>
-          <div class="flex items-center justify-center">
-            <button
-              type="button"
-              class="flex transform items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 px-8 py-4 font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-emerald-600 hover:to-emerald-700 hover:shadow-xl"
-            >
-              <span>Contáctenos</span>
-              <Icon
-                name="mdi:arrow-right"
-                class="size-5 transition-transform group-hover:translate-x-1"
-              />
-              <div
-                class="absolute inset-0 bg-white opacity-0 transition-opacity group-hover:opacity-10"
-              >
-              </div>
-            </button>
+        {/* Steps for Desktop - Timeline */}
+        <div class="relative hidden md:block">
+          {/* Timeline line */}
+          <div
+            class="from-emerald/20 via-emerald/40 to-emerald/20 absolute left-1/2 h-full w-1 -translate-x-1/2 transform rounded-full bg-gradient-to-b"
+          >
+          </div>
+
+          <div class="space-y-16 lg:space-y-24">
+            {
+              [
+                {
+                  number: "01",
+                  title: "Análisis y Estrategia",
+                  description:
+                    "Estudiamos tu negocio, mercado y competencia para crear una estrategia de captación personalizada que genere leads de alta calidad desde el primer día.",
+                  icon: <Icon name="mdi:target" class="h-6 w-6" />,
+                  delay: "0s",
+                  image: "analysis&strategy.jpg",
+                },
+                {
+                  number: "02",
+                  title: "Creación de Campañas",
+                  description:
+                    "Diseñamos y lanzamos campañas de Meta Ads optimizadas para atraer tu cliente ideal, con creativos que convierten y audiencias precisas.",
+                  icon: <Icon name="mdi:electricity" class="h-6 w-6" />,
+                  delay: "0.2s",
+                  image: "ads.png",
+                },
+                {
+                  number: "03",
+                  title: "Automatización y CRM",
+                  description:
+                    "Implementamos bots inteligentes, sistemas de precalificación automática y CRM personalizado que gestiona leads las 24/7 sin intervención manual.",
+                  icon: (
+                    <Icon
+                      name="mdi:checkbox-marked-circle-auto-outline"
+                      class="text-emerald h-6 w-6"
+                    />
+                  ),
+                  delay: "0.4s",
+                  image: "crm.png",
+                },
+                {
+                  number: "04",
+                  title: "Optimización y Escala",
+                  description:
+                    "Monitoreamos, ajustamos y escalamos tu sistema basado en datos reales para maximizar el ROI y garantizar crecimiento sostenible.",
+                  icon: <Icon name="mdi:trending-up" class="h-6 w-6" />,
+                  delay: "0.6s",
+                  image: "roi.jpg",
+                },
+              ].map((step, index) => (
+                <div
+                  key={index}
+                  class={`flex items-center gap-8 lg:gap-16 ${
+                    index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+                  }`}
+                >
+                  {/* Content */}
+                  <div class="flex-1">
+                    <div class="border-emerald/10 hover:border-emerald/30 relative rounded-2xl border bg-white p-8 shadow-lg transition-all duration-300 hover:shadow-xl">
+                      <div class="bg-emerald absolute -top-4 -left-4 flex h-16 w-16 items-center justify-center rounded-full text-xl font-bold text-white shadow-lg">
+                        {step.number}
+                      </div>
+                      <div class="ml-8">
+                        <div class="mb-4 flex items-center space-x-3">
+                          <div class="text-emerald">{step.icon}</div>
+                          <h3 class="text-dark-gray text-2xl font-bold">
+                            {step.title}
+                          </h3>
+                        </div>
+                        <p class="text-lg leading-relaxed text-gray-600">
+                          {step.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Timeline dot */}
+                  <div class="bg-emerald relative z-10 hidden h-6 w-6 flex-shrink-0 rounded-full shadow-lg lg:flex">
+                    <div class="m-auto h-3 w-3 rounded-full bg-white" />
+                  </div>
+
+                  {/* Visual element */}
+                  <div class="hidden flex-1 lg:block">
+                    <img
+                      class="h-auto w-full rounded-2xl"
+                      src={step.image}
+                      alt={step.title}
+                    />
+                  </div>
+                </div>
+              ))
+            }
           </div>
         </div>
-      </div>
 
-      {/* Trust indicators */}
-      <div
-        class="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-500 md:gap-8"
-      >
-        <div class="flex items-center space-x-2">
-          <Icon
-            name="mdi:checkbox-marked-circle-auto-outline"
-            class="text-emerald h-4 w-4"
-          />
-          <span>Implementación</span>
-        </div>
-        <div class="flex items-center space-x-2">
-          <Icon
-            name="mdi:checkbox-marked-circle-auto-outline"
-            class="text-emerald h-4 w-4"
-          />
-          <span>Soporte 24/7</span>
-        </div>
-        <div class="flex items-center space-x-2">
-          <Icon
-            name="mdi:checkbox-marked-circle-auto-outline"
-            class="text-emerald h-4 w-4"
-          />
-          <span>Garantía de resultados</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-dark-gray py-8">
-    <div class="container mx-auto px-6 lg:px-8">
-      <div class="pt-8">
-        <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
-          <div>
-            <Image
-              src={AdcendiaEmerald}
-              width={AdcendiaEmerald.width}
-              height={AdcendiaEmerald.height}
-              alt="Adcendia logo"
-              class="max-w-96 mb-8"
-            />
-            <p class="text-gray-400">
-              Transformamos visitantes en clientes reales con tecnología de
-              vanguardia y estrategias probadas.
+        {/* Bottom CTA */}
+        <div class="mt-16 text-center md:mt-24">
+          <div
+            class="from-emerald/5 to-emerald/10 border-emerald/20 rounded-3xl border bg-gradient-to-r p-8 md:p-12"
+          >
+            <h3 class="text-dark-gray mb-4 text-2xl font-bold md:text-3xl">
+              ¿Listo para comenzar tu transformación digital?
+            </h3>
+            <p class="mx-auto mb-8 max-w-2xl text-lg text-gray-600">
+              Únete a empresarios que ya están escalando sus ventas con nuestro
+              sistema automatizado
             </p>
-          </div>
-          <div>
-            <h4 class="mb-4 font-bold text-white">Servicios</h4>
-            <ul class="space-y-2 text-gray-400">
-              <li>Meta Ads</li>
-              <li>CRM Automatizado</li>
-              <li>Bots de IA</li>
-              <li>Consultoría</li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="mb-4 font-bold text-white">Redes Sociales</h4>
-            <ul class="space-y-2 text-gray-400">
-              {
-                [
-                  {
-                    href: "https://www.instagram.com/adcendia?igsh=dmJ5ZGVpeGI4djY5",
-                    label: "Instagram",
-                    icon: <Icon class="size-6" name="mdi:instagram" />,
-                  },
-
-                  {
-                    href: "https://www.facebook.com/profile.php?id=61576799478005",
-                    label: "Facebook",
-                    icon: <Icon class="size-6" name="mdi:facebook" />,
-                  },
-                  {
-                    href: "https://www.tiktok.com/@adcendia?_t=ZM-8xfpmEaOFdN&_r=1",
-                    label: "TikTok",
-                    icon: (
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="M12.525.02c1.31-.02 2.61-.01 3.91-.02c.08 1.53.63 3.09 1.75 4.17c1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97c-.57-.26-1.1-.59-1.62-.93c-.01 2.92.01 5.84-.02 8.75c-.08 1.4-.54 2.79-1.35 3.94c-1.31 1.92-3.58 3.17-5.91 3.21c-1.43.08-2.86-.31-4.08-1.03c-2.02-1.19-3.44-3.37-3.65-5.71c-.02-.5-.03-1-.01-1.49c.18-1.9 1.12-3.72 2.58-4.96c1.66-1.44 3.98-2.13 6.15-1.72c.02 1.48-.04 2.96-.04 4.44c-.99-.32-2.15-.23-3.02.37c-.63.41-1.11 1.04-1.36 1.75c-.21.51-.15 1.07-.14 1.61c.24 1.64 1.82 3.02 3.5 2.87c1.12-.01 2.19-.66 2.77-1.61c.19-.33.4-.67.41-1.06c.1-1.79.06-3.57.07-5.36c.01-4.03-.01-8.05.02-12.07"
-                        />
-                      </svg>
-                    ),
-                  },
-                ].map((o) => (
-                  <li>
-                    <a
-                      target="_blank"
-                      class="hover:text-emerald flex items-center gap-2 hover:scale-105"
-                      href={o.href}
-                    >
-                      {o.icon} {o.label}
-                    </a>
-                  </li>
-                ))
-              }
-            </ul>
+            <div class="flex items-center justify-center">
+              <button
+                type="button"
+                class="rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-emerald-600 hover:to-emerald-700 hover:shadow-xl"
+              >
+                <a
+                  target="_blank"
+                  href="https://wa.me/17683681603?text=%22Hola%20chicos%20%F0%9F%91%8B%F0%9F%8F%BB%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20servicio%20Adcen%20Core%22"
+                  class="flex gap-2 px-8 py-4"
+                >
+                  <span>Contáctenos</span>
+                  <Icon
+                    name="mdi:arrow-right"
+                    class="size-5 transition-transform group-hover:translate-x-1"
+                  />
+                </a>
+              </button>
+            </div>
           </div>
         </div>
 
+        {/* Trust indicators */}
         <div
-          class="mt-12 border-t border-gray-700 pt-8 text-center text-gray-400"
+          class="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-500 md:gap-8"
         >
-          <p>&copy; 2024 Adcendia. Todos los derechos reservados</p>
+          <div class="flex items-center space-x-2">
+            <Icon
+              name="mdi:checkbox-marked-circle-auto-outline"
+              class="text-emerald h-4 w-4"
+            />
+            <span>Implementación</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <Icon
+              name="mdi:checkbox-marked-circle-auto-outline"
+              class="text-emerald h-4 w-4"
+            />
+            <span>Soporte 24/7</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <Icon
+              name="mdi:checkbox-marked-circle-auto-outline"
+              class="text-emerald h-4 w-4"
+            />
+            <span>Garantía de resultados</span>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-gray py-8">
+      <div class="container mx-auto px-6 lg:px-8">
+        <div class="pt-8">
+          <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+            <div>
+              <Image
+                src={AdcendiaEmerald}
+                width={AdcendiaEmerald.width}
+                height={AdcendiaEmerald.height}
+                alt="Adcendia logo"
+                class="mb-8 max-w-96"
+              />
+              <p class="text-gray-400">
+                Transformamos visitantes en clientes reales con tecnología de
+                vanguardia y estrategias probadas.
+              </p>
+            </div>
+            <div>
+              <h4 class="mb-4 font-bold text-white">Servicios</h4>
+              <ul class="space-y-2 text-gray-400">
+                <li>Meta Ads</li>
+                <li>CRM Automatizado</li>
+                <li>Bots de IA</li>
+                <li>Consultoría</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="mb-4 font-bold text-white">Redes Sociales</h4>
+              <ul class="space-y-2 text-gray-400">
+                {
+                  [
+                    {
+                      href: "https://www.instagram.com/adcendia?igsh=dmJ5ZGVpeGI4djY5",
+                      label: "Instagram",
+                      icon: <Icon class="size-6" name="mdi:instagram" />,
+                    },
+
+                    {
+                      href: "https://www.facebook.com/profile.php?id=61576799478005",
+                      label: "Facebook",
+                      icon: <Icon class="size-6" name="mdi:facebook" />,
+                    },
+                    {
+                      href: "https://www.tiktok.com/@adcendia?_t=ZM-8xfpmEaOFdN&_r=1",
+                      label: "TikTok",
+                      icon: (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M12.525.02c1.31-.02 2.61-.01 3.91-.02c.08 1.53.63 3.09 1.75 4.17c1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97c-.57-.26-1.1-.59-1.62-.93c-.01 2.92.01 5.84-.02 8.75c-.08 1.4-.54 2.79-1.35 3.94c-1.31 1.92-3.58 3.17-5.91 3.21c-1.43.08-2.86-.31-4.08-1.03c-2.02-1.19-3.44-3.37-3.65-5.71c-.02-.5-.03-1-.01-1.49c.18-1.9 1.12-3.72 2.58-4.96c1.66-1.44 3.98-2.13 6.15-1.72c.02 1.48-.04 2.96-.04 4.44c-.99-.32-2.15-.23-3.02.37c-.63.41-1.11 1.04-1.36 1.75c-.21.51-.15 1.07-.14 1.61c.24 1.64 1.82 3.02 3.5 2.87c1.12-.01 2.19-.66 2.77-1.61c.19-.33.4-.67.41-1.06c.1-1.79.06-3.57.07-5.36c.01-4.03-.01-8.05.02-12.07"
+                          />
+                        </svg>
+                      ),
+                    },
+                  ].map((o) => (
+                    <li>
+                      <a
+                        target="_blank"
+                        class="hover:text-emerald flex items-center gap-2 hover:scale-105"
+                        href={o.href}
+                      >
+                        {o.icon} {o.label}
+                      </a>
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+          </div>
+
+          <div
+            class="mt-12 border-t border-gray-700 pt-8 text-center text-gray-400"
+          >
+            <p>&copy; 2024 Adcendia. Todos los derechos reservados</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </section>
 </RootLayout>

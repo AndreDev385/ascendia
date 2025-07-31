@@ -10,7 +10,6 @@
 
 /* Animaciones personalizadas */
 @keyframes emeraldPulse {
-
   0%,
   100% {
     box-shadow: 0 0 0 0 rgba(7, 228, 159, 0.4);
@@ -26,11 +25,13 @@
 }
 
 .bg-client-light-gradient {
-  background: linear-gradient(135deg,
-      #ffffff 0%,
-      var(--color-light-green) 30%,
-      #f8fffe 70%,
-      #ffffff 100%);
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    var(--color-light-green) 30%,
+    #f8fffe 70%,
+    #ffffff 100%
+  );
 }
 
 .bg-client-emerald-gradient {
@@ -38,9 +39,11 @@
 }
 
 .text-client-emerald-gradient {
-  background: linear-gradient(135deg,
-      var(--color-emerald) 0%,
-      var(--color-forest-green) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-emerald) 0%,
+    var(--color-forest-green) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
