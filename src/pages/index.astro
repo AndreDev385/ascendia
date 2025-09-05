@@ -18,71 +18,66 @@ import RootLayout from "../layouts/RootLayout.astro";
       width={AdcendiaLogo.width}
       height={AdcendiaLogo.height}
       alt="Adcendia logo"
-      class="animate__animated animate__fadeIn animate__slower absolute top-0 right-0 left-0 z-10 mx-auto h-auto w-full max-w-[400px] lg:max-w-[640px]"
+      class="animate__animated animate__fadeIn animate__slower absolute top-0 right-0 left-0 z-10 mx-auto h-auto w-full max-w-[300px] md:max-w-[400px] lg:max-w-[640px]"
     />
     {/* Main Content Container */}
     <div
-      class="relative z-10 flex min-h-screen items-center justify-center px-4 py-16"
+      class="relative z-10 mx-auto flex min-h-screen max-w-6xl flex-col items-center justify-center px-4 py-16"
     >
-      <div class="mx-auto max-w-6xl text-center">
-        {/* Main Headline */}
-        <h1 class="animate__animated animate__fadeIn animate__delay-.5s mb-8">
-          <span
-            class="text-dark-green block text-4xl font-black lg:text-6xl xl:text-7xl"
-          >
-            Transformamos
-          </span>
-          <span
-            class="text-client-emerald-gradient block text-4xl font-black lg:text-6xl xl:text-7xl"
-          >
-            Visitantes en Clientes que Compran
-          </span>
-        </h1>
+      {/* Main Headline */}
+      <h1
+        class="animate__animated animate__fadeIn animate__delay-.5s mb-8 text-center text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
+      >
+        <span class="text-client-emerald-gradient block font-black">
+          Capta más leads y vende más propiedades
+        </span>
+      </h1>
 
-        {/* Subtitle */}
-        <p
-          class="text-dark-gray animate__animated animate__fadeIn animate__slow mx-auto mb-12 max-w-4xl text-xl leading-relaxed lg:text-2xl"
+      {/* Subtitle */}
+      <p
+        class="text-dark-gray animate__animated animate__fadeIn animate__slow mx-auto mb-12 max-w-4xl text-center text-lg leading-relaxed md:text-xl lg:text-2xl"
+      >
+        Con nuestro Sistema <span class="font-bold text-blue-700"
+          >ADCEN CORE</span
+        >, tendrás una máquina de ventas diseñada para <strong
+          class="font-bold text-green-700"
+          >captar, calificar y cerrar clientes,</strong
+        > con el objetivo de que generes mínimo <span
+          class="font-bold text-purple-700">$15,000 USD en solo 120 días</span
         >
-          Con tres pilares fundamentales
-          <span class="font-bold text-blue-700"> Publicidad Digital</span>,
-          <span class="font-bold text-purple-700"> Email Marketing</span> y
-          <span class="font-bold text-orange-500"> Sistemas de Ventas. </span>
-          Te garantizamos conectar con tu cliente ideal, aumentar tus ventas e impulsar
-          tu marca.
-        </p>
+      </p>
 
-        <button
-          class="bg-emerald shadow-emeral animate__animated animate_fast animate__pulse animate__repeat-3 relative overflow-hidden rounded-2xl p-1 hover:scale-110"
+      <button
+        class="bg-emerald shadow-emeral animate__animated animate_fast animate__pulse animate__repeat-3 relative overflow-hidden rounded-2xl p-1 hover:scale-110"
+      >
+        <a
+          target="_blank"
+          href="https://wa.me/17683681603?text=%22Hola%20chicos%20%F0%9F%91%8B%F0%9F%8F%BB%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20servicio%20Adcen%20Core%22"
         >
-          <a
-            target="_blank"
-            href="https://wa.me/17683681603?text=%22Hola%20chicos%20%F0%9F%91%8B%F0%9F%8F%BB%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20servicio%20Adcen%20Core%22"
+          <div
+            class="bg-client-emerald-gradient relative rounded-xl px-8 py-4 transition-all duration-300"
           >
-            <div
-              class="bg-client-emerald-gradient relative rounded-xl px-12 py-6 transition-all duration-300"
-            >
-              <div class="flex items-center gap-3">
-                <span class="text-xl font-black text-white">CONTÁCTENOS</span>
-              </div>
+            <div class="flex items-center gap-3">
+              <span class="text-xl font-black text-white">CONTÁCTENOS</span>
             </div>
+          </div>
 
-            {/* Animated Border Glow */}
-            <div
-              class="bg-emerald absolute inset-0 rounded-2xl opacity-0 blur-xl transition-opacity"
-            >
-            </div>
+          {/* Animated Border Glow */}
+          <div
+            class="bg-emerald absolute inset-0 rounded-2xl opacity-0 blur-xl transition-opacity"
+          >
+          </div>
 
-            {/* Shine Effect */}
-            <div
-              class="absolute inset-0 -translate-x-full rounded-2xl bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-1000 group-hover:translate-x-full"
-            >
-            </div>
-          </a>
-        </button>
-      </div>
+          {/* Shine Effect */}
+          <div
+            class="absolute inset-0 -translate-x-full rounded-2xl bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-1000 group-hover:translate-x-full"
+          >
+          </div>
+        </a>
+      </button>
 
       <div
-        class="absolute bottom-10 left-1/2 z-100 -translate-x-1/2 transform animate-bounce"
+        class="absolute bottom-1 left-1/2 z-100 -translate-x-1/2 transform animate-bounce"
       >
         <a href="#benefits" class="flex flex-col items-center justify-center">
           <span class="text-sm text-gray-600">Ver más</span>
@@ -166,11 +161,8 @@ import RootLayout from "../layouts/RootLayout.astro";
                 description:
                   "Inversión que genera retorno real con seguimiento transparente de resultados",
               },
-            ].map((benefit, index) => (
-              <div
-                key={index}
-                class="group hover:border-emerald/50 rounded-2xl border border-white/20 bg-white/10 p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:bg-white/15 hover:shadow-2xl"
-              >
+            ].map((benefit) => (
+              <div class="group hover:border-emerald/50 rounded-2xl border border-white/20 bg-white/10 p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:bg-white/15 hover:shadow-2xl">
                 <div class="flex items-start space-x-4">
                   <div class="flex-shrink-0">
                     <div class="bg-emerald/20 text-emerald group-hover:bg-emerald flex h-12 w-12 items-center justify-center rounded-xl transition-colors duration-300 group-hover:text-white">
@@ -262,46 +254,27 @@ import RootLayout from "../layouts/RootLayout.astro";
             [
               {
                 number: "01",
-                title: "Análisis y Estrategia",
+                title: "Despegue",
                 description:
-                  "Estudiamos tu negocio, mercado y competencia para crear una estrategia de captación personalizada que genere leads de alta calidad desde el primer día.",
-                icon: <Icon name="mdi:target" class="h-6 w-6" />,
-                delay: "0s",
+                  "Iniciamos la captación de leads calificados mediante campañas estratégicas que actival el flujo de oportunidades reales, listas para avanzar en un proceso de compra o inversión.",
+                icon: <Icon name="mdi:electricity" class="h-6 w-6" />,
               },
               {
                 number: "02",
-                title: "Creación de Campañas",
+                title: "Core",
                 description:
-                  "Diseñamos y lanzamos campañas de Meta Ads optimizadas para atraer tu cliente ideal, con creativos que convierten y audiencias precisas.",
-                icon: <Icon name="mdi:electricity" class="h-6 w-6" />,
-                delay: "0.2s",
+                  "Diseñar e implementar una infraestructura de ventas inteligente y automatizada, que te permita dar un seguimiento efectivo a cada lead, escalar sin esfuerzo manual y eliminar tareas repetitivas que frenan tu crecimiento.",
+                icon: <Icon name="mdi:target" class="h-6 w-6" />,
               },
               {
                 number: "03",
-                title: "Automatización y CRM",
+                title: "Ascenso",
                 description:
-                  "Implementamos bots inteligentes, sistemas de precalificación automática y CRM personalizado que gestiona leads las 24/7 sin intervención manual.",
-                icon: (
-                  <Icon
-                    name="mdi:checkbox-marked-circle-auto-outline"
-                    class="text-emerald h-6 w-6"
-                  />
-                ),
-                delay: "0.4s",
-              },
-              {
-                number: "04",
-                title: "Optimización y Escala",
-                description:
-                  "Monitoreamos, ajustamos y escalamos tu sistema basado en datos reales para maximizar el ROI y garantizar crecimiento sostenible.",
+                  "Optimizar, escalar y proyectar el crecimiento de tu negocio con base en datos reales. Aquí maximizamos los resultados del sistema ya instalado, corregimos cuellos de botella, afinamos cada del proceso y desarrollamos una ruta para que escales con eficiencia, sin saturarte ni perder el control.",
                 icon: <Icon name="mdi:trending-up" class="h-6 w-6" />,
-                delay: "0.6s",
               },
-            ].map((step, index) => (
-              <div
-                key={index}
-                class="border-emerald/10 hover:border-emerald/30 rounded-2xl border bg-white p-6 shadow-lg transition-all duration-300"
-              >
+            ].map((step) => (
+              <div class="border-emerald/10 hover:border-emerald/30 rounded-2xl border bg-white p-6 shadow-lg transition-all duration-300">
                 <div class="flex items-start space-x-4">
                   <div class="flex-shrink-0">
                     <div class="bg-emerald flex h-12 w-12 items-center justify-center rounded-xl text-lg font-bold text-white">
@@ -338,48 +311,30 @@ import RootLayout from "../layouts/RootLayout.astro";
               [
                 {
                   number: "01",
-                  title: "Análisis y Estrategia",
+                  title: "Despegue",
                   description:
-                    "Estudiamos tu negocio, mercado y competencia para crear una estrategia de captación personalizada que genere leads de alta calidad desde el primer día.",
-                  icon: <Icon name="mdi:target" class="h-6 w-6" />,
-                  delay: "0s",
-                  image: "analysis&strategy.jpg",
-                },
-                {
-                  number: "02",
-                  title: "Creación de Campañas",
-                  description:
-                    "Diseñamos y lanzamos campañas de Meta Ads optimizadas para atraer tu cliente ideal, con creativos que convierten y audiencias precisas.",
+                    "Iniciamos la captación de leads calificados mediante campañas estratégicas que actival el flujo de oportunidades reales, listas para avanzar en un proceso de compra o inversión.",
                   icon: <Icon name="mdi:electricity" class="h-6 w-6" />,
-                  delay: "0.2s",
                   image: "ads.png",
                 },
                 {
-                  number: "03",
-                  title: "Automatización y CRM",
+                  number: "02",
+                  title: "Core",
                   description:
-                    "Implementamos bots inteligentes, sistemas de precalificación automática y CRM personalizado que gestiona leads las 24/7 sin intervención manual.",
-                  icon: (
-                    <Icon
-                      name="mdi:checkbox-marked-circle-auto-outline"
-                      class="text-emerald h-6 w-6"
-                    />
-                  ),
-                  delay: "0.4s",
+                    "Diseñar e implementar una infraestructura de ventas inteligente y automatizada, que te permita dar un seguimiento efectivo a cada lead, escalar sin esfuerzo manual y eliminar tareas repetitivas que frenan tu crecimiento.",
+                  icon: <Icon name="mdi:target" class="h-6 w-6" />,
                   image: "crm.png",
                 },
                 {
-                  number: "04",
-                  title: "Optimización y Escala",
+                  number: "03",
+                  title: "Ascenso",
                   description:
-                    "Monitoreamos, ajustamos y escalamos tu sistema basado en datos reales para maximizar el ROI y garantizar crecimiento sostenible.",
+                    "Optimizar, escalar y proyectar el crecimiento de tu negocio con base en datos reales. Aquí maximizamos los resultados del sistema ya instalado, corregimos cuellos de botella, afinamos cada del proceso y desarrollamos una ruta para que escales con eficiencia, sin saturarte ni perder el control.",
                   icon: <Icon name="mdi:trending-up" class="h-6 w-6" />,
-                  delay: "0.6s",
-                  image: "roi.jpg",
+                  image: "analysis&strategy.jpg",
                 },
               ].map((step, index) => (
                 <div
-                  key={index}
                   class={`flex items-center gap-8 lg:gap-16 ${
                     index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
                   }`}
@@ -432,8 +387,8 @@ import RootLayout from "../layouts/RootLayout.astro";
               ¿Listo para comenzar tu transformación digital?
             </h3>
             <p class="mx-auto mb-8 max-w-2xl text-lg text-gray-600">
-              Únete a empresarios que ya están escalando sus ventas con nuestro
-              sistema automatizado
+              Únete a profesionales del sector inmobiliario que ya están
+              escalando sus ventas con nuestro sistema automatizado
             </p>
             <div class="flex items-center justify-center">
               <button
@@ -518,18 +473,18 @@ import RootLayout from "../layouts/RootLayout.astro";
                 {
                   [
                     {
-                      href: "https://www.instagram.com/adcendia?igsh=dmJ5ZGVpeGI4djY5",
+                      href: "https://www.instagram.com/christiancrespoo?igsh=Z2IwcXcwNTljeW5m",
                       label: "Instagram",
                       icon: <Icon class="size-6" name="mdi:instagram" />,
                     },
 
                     {
-                      href: "https://www.facebook.com/profile.php?id=61576799478005",
+                      href: "https://www.facebook.com/share/17AVk1X2XD/",
                       label: "Facebook",
                       icon: <Icon class="size-6" name="mdi:facebook" />,
                     },
                     {
-                      href: "https://www.tiktok.com/@adcendia?_t=ZM-8xfpmEaOFdN&_r=1",
+                      href: "https://www.tiktok.com/@christiancrespoo?_t=ZS-8zTXOfUTrKG&_r=1",
                       label: "TikTok",
                       icon: (
                         <svg
