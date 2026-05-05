@@ -8,245 +8,341 @@ import RootLayout from "../layouts/RootLayout.astro";
 ---
 
 <RootLayout>
-  <!-- Hero -->
+  <!-- Hero Section with VSL -->
   <section
     id="hero"
-    class="bg-client-light-gradient relative min-h-screen overflow-hidden"
+    class="via-light-green/20 to-light-green/30 relative overflow-hidden bg-gradient-to-b from-white"
   >
-    <Image
-      src={AdcendiaLogo}
-      width={AdcendiaLogo.width}
-      height={AdcendiaLogo.height}
-      alt="Adcendia logo"
-      class="animate__animated animate__fadeIn animate__slower absolute top-0 right-0 left-0 z-10 mx-auto h-auto w-full max-w-[300px] md:max-w-[400px] lg:max-w-[640px]"
-    />
-    {/* Main Content Container */}
-    <div
-      class="relative z-10 mx-auto flex min-h-screen max-w-6xl flex-col items-center justify-center px-4 py-16"
-    >
-      {/* Main Headline */}
-      <h1
-        class="animate__animated animate__fadeIn animate__delay-.5s mb-8 text-center text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
-      >
-        <span class="text-client-emerald-gradient block font-black">
-          Capta más leads y vende más propiedades
-        </span>
-      </h1>
-
-      {/* Subtitle */}
-      <p
-        class="text-dark-gray animate__animated animate__fadeIn animate__slow mx-auto mb-12 max-w-4xl text-center text-lg leading-relaxed md:text-xl lg:text-2xl"
-      >
-        Con nuestro Sistema <span class="font-bold text-blue-700"
-          >ADCEN CORE</span
-        >, tendrás una máquina de ventas diseñada para <strong
-          class="font-bold text-green-700"
-          >captar, calificar y cerrar clientes,</strong
-        > con el objetivo de que generes mínimo <span
-          class="font-bold text-purple-700">$15,000 USD en solo 120 días</span
+    <div class="container mx-auto px-4 py-12 md:py-20 lg:py-24">
+      <div class="grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-12">
+        <!-- Left Column: Copy -->
+        <div
+          class="flex flex-col items-center text-center lg:items-start lg:text-left"
         >
-      </p>
-
-      <button
-        class="bg-emerald shadow-emeral animate__animated animate_fast animate__pulse animate__repeat-3 relative overflow-hidden rounded-2xl p-1 hover:scale-110"
-      >
-        <a target="_blank" href="https://wa.link/ukiqhb">
-          <div
-            class="bg-client-emerald-gradient relative rounded-xl px-8 py-4 transition-all duration-300"
+          <!-- Exclusive Badge -->
+          <span
+            class="bg-emerald/10 text-emerald mb-6 inline-block rounded-full px-4 py-1.5 text-sm font-medium tracking-wide"
           >
-            <div class="flex items-center gap-3">
-              <span class="text-xl font-black text-white">CONTÁCTENOS</span>
+            Exclusivo para Realtors, Inmobiliarias y Desarrolladores que venden minimo 1 propiedad al mes
+          </span>
+
+          <!-- Logo -->
+          <Image
+            src={AdcendiaLogo}
+            width={AdcendiaLogo.width}
+            height={AdcendiaLogo.height}
+            alt="Adcendia logo"
+            class="mb-6 h-auto w-full max-w-[180px] md:max-w-[220px] lg:max-w-[260px]"
+          />
+
+          <!-- Headline -->
+          <h1
+            class="text-dark-gray mb-6 text-3xl leading-tight font-bold md:text-4xl lg:text-5xl"
+          >
+            <span class="text-client-emerald-gradient"
+              >Capta y Vende Propiedades</span
+            >{" "}
+			Con Nuestro Sistema de Adquisición y Ventas
+          </h1>
+
+          <!-- Subheadline -->
+          <p
+            class="mb-8 max-w-xl text-lg leading-relaxed text-gray-600 md:text-xl"
+          >
+            Sin depender de referidos, portales ni conversaciones que no se
+            convierten en clientes.
+          </p>
+
+          <!-- Trust Indicators -->
+          <div
+            class="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-500 lg:justify-start"
+          >
+            <div class="flex items-center gap-2">
+              <Icon name="mdi:shield-check" class="text-emerald size-5" />
+              <span>Sin contratos</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <Icon name="mdi:headset" class="text-emerald size-5" />
+              <span>Soporte 24/7</span>
             </div>
           </div>
+        </div>
 
-          {/* Animated Border Glow */}
-          <div
-            class="bg-emerald absolute inset-0 rounded-2xl opacity-0 blur-xl transition-opacity"
-          >
+        <!-- Right Column: VSL Video -->
+        <div class="relative">
+          <!-- Video Container -->
+          <div class="relative overflow-hidden rounded-2xl shadow-2xl">
+            <!-- Video Cover / Poster -->
+            <video
+              id="vsl-video"
+              class="bg-dark-gray aspect-video w-full object-cover"
+              controls
+              poster="/ACDN - VSL-Cover.jpg"
+              preload="metadata"
+            >
+              <source src="https://adcendiallc.sirv.com/ACDN%20-%20VSL.mp4" type="video/mp4" />
+              Tu navegador no soporta el video.
+            </video>
+
+            <!-- Play Button Overlay (shown before video loads) -->
+            <button
+              type="button"
+              id="video-overlay"
+              class="bg-dark-gray/80 hover:bg-dark-gray/70 absolute inset-0 flex items-center justify-center transition-opacity"
+              aria-label="Reproducir video"
+            >
+              <div
+                class="bg-emerald flex h-20 w-20 items-center justify-center rounded-full shadow-lg transition-transform hover:scale-110"
+              >
+                <Icon name="mdi:play" class="size-10 pl-1 text-white" />
+              </div>
+            </button>
           </div>
 
-          {/* Shine Effect */}
-          <div
-            class="absolute inset-0 -translate-x-full rounded-2xl bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-1000 group-hover:translate-x-full"
-          >
-          </div>
-        </a>
-      </button>
+          <!-- Video Caption -->
+          <p class="mt-4 text-center text-sm text-gray-500">
+            Mira cómo funciona nuestro sistema en 90 segundos
+          </p>
+        </div>
+      </div>
 
+      <!-- CTA Buttons (below both columns, full width) -->
       <div
-        class="absolute bottom-1 left-1/2 z-100 -translate-x-1/2 transform animate-bounce"
+        class="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center"
       >
-        <a href="#benefits" class="flex flex-col items-center justify-center">
-          <span class="text-sm text-gray-600">Ver más</span>
-          <Icon name="mdi:keyboard-arrow-down" class="size-8 text-gray-600" />
+        <a
+          href="#calendar"
+          class="group from-emerald to-emerald relative inline-flex items-center justify-center gap-3 rounded-xl bg-gradient-to-r px-8 py-4 text-lg font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
+        >
+          <Icon name="mdi:calendar" class="size-5" />
+          <span>Agendar una llamada</span>
+          <Icon
+            name="mdi:arrow-right"
+            class="size-5 transition-transform group-hover:translate-x-1"
+          />
+        </a>
+
+        <a
+          target="_blank"
+          href="https://wa.link/ukiqhb"
+          class="border-emerald text-emerald hover:bg-emerald/5 inline-flex items-center justify-center gap-3 rounded-xl border-2 px-8 py-4 text-lg font-bold transition-all duration-300"
+        >
+          <Icon name="mdi:whatsapp" class="size-5" />
+          <span>Hablemos por WhatsApp</span>
         </a>
       </div>
     </div>
 
-    <!-- What would you expect -->
-    <section
-      id="benefits"
-      class="from-dark-gray to-forest-green relative overflow-hidden bg-gradient-to-br py-20"
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2">
+      <a
+        href="#benefits"
+        class="hover:text-emerald flex flex-col items-center justify-center text-gray-400 transition-colors"
+      >
+        <span class="text-sm">Descubre más</span>
+        <Icon name="mdi:chevron-down" class="size-6 animate-bounce" />
+      </a>
+    </div>
+  </section>
+
+  <!-- What would you expect -->
+  <section
+    id="benefits"
+    class="from-dark-gray to-forest-green relative overflow-hidden bg-gradient-to-br py-20"
+  >
+    {/* Background decorative elements */}
+    <div
+      class="bg-emerald/10 absolute top-0 left-0 h-72 w-72 rounded-full blur-3xl"
     >
-      {/* Background decorative elements */}
-      <div
-        class="bg-emerald/10 absolute top-0 left-0 h-72 w-72 rounded-full blur-3xl"
-      >
-      </div>
-      <div
-        class="bg-emerald/5 absolute right-0 bottom-0 h-96 w-96 rounded-full blur-3xl"
-      >
+    </div>
+    <div
+      class="bg-emerald/5 absolute right-0 bottom-0 h-96 w-96 rounded-full blur-3xl"
+    >
+    </div>
+
+    <div class="relative z-10 container mx-auto px-6">
+      {/* Header */}
+      <div class="mb-16 text-center">
+        <h2
+          class="mt-6 mb-4 text-4xl leading-tight font-bold text-white md:text-5xl"
+        >
+          Del Caos a las
+          <span class="text-emerald block">Conversiones Reales</span>
+        </h2>
+        <p class="text-light-green mx-auto max-w-3xl text-xl leading-relaxed">
+          Sistemas personalizados que transforman tu negocio en una máquina de
+          ventas
+        </p>
       </div>
 
-      <div class="relative z-10 container mx-auto px-6">
-        {/* Header */}
-        <div class="mb-16 text-center">
-          <h2
-            class="mt-6 mb-4 text-4xl leading-tight font-bold text-white md:text-5xl"
-          >
-            Del Caos a las
-            <span class="text-emerald block">Conversiones Reales</span>
-          </h2>
-          <p class="text-light-green mx-auto max-w-3xl text-xl leading-relaxed">
-            Sistemas personalizados que transforman tu negocio en una máquina de
-            ventas
-          </p>
-        </div>
-
-        {/* Benefits Grid */}
-        <div class="mb-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {
-            [
-              {
-                icon: <Icon name="mdi:users" class="size-6" />,
-                title: "Leads Calificados",
-                description:
-                  "Prospectos reales con intención de compra, no solo tráfico sin conversión",
-              },
-              {
-                icon: <Icon name="mdi:calendar" class="size-6" />,
-                title: "Agenda Llena de Oportunidades",
-                description:
-                  "Citas programadas automáticamente con clientes potenciales de alto valor",
-              },
-              {
-                icon: <Icon name="mdi:robot" class="size-6" />,
-                title: "Bots Inteligentes 24/7",
-                description:
-                  "Precalificación automática y respuestas instantáneas sin intervención manual",
-              },
-              {
-                icon: <Icon name="mdi:trending-up" class="size-6" />,
-                title: "CRM y Seguimiento Automatizado",
-                description:
-                  "Sistema completo de gestión con embudos personalizados y seguimiento por WhatsApp",
-              },
-              {
-                icon: <Icon name="mdi:shield" class="size-6" />,
-                title: "Escalabilidad Sin Contratar Personal",
-                description:
-                  "Crece tu negocio sin aumentar gastos operativos ni depender de más empleados",
-              },
-              {
-                icon: (
-                  <Icon
-                    name="mdi:checkbox-marked-circle-auto-outline"
-                    class="size-6"
-                  />
-                ),
-                title: "ROI Comprobable",
-                description:
-                  "Inversión que genera retorno real con seguimiento transparente de resultados",
-              },
-            ].map((benefit) => (
-              <div class="group hover:border-emerald/50 rounded-2xl border border-white/20 bg-white/10 p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:bg-white/15 hover:shadow-2xl">
-                <div class="flex items-start space-x-4">
-                  <div class="flex-shrink-0">
-                    <div class="bg-emerald/20 text-emerald group-hover:bg-emerald flex h-12 w-12 items-center justify-center rounded-xl transition-colors duration-300 group-hover:text-white">
-                      {benefit.icon}
-                    </div>
-                  </div>
-                  <div class="flex-1">
-                    <h3 class="group-hover:text-emerald mb-3 text-lg font-bold text-white transition-colors duration-300">
-                      {benefit.title}
-                    </h3>
-                    <p class="text-light-green/80 leading-relaxed">
-                      {benefit.description}
-                    </p>
+      {/* Benefits Grid */}
+      <div class="mb-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {
+          [
+            {
+              icon: <Icon name="mdi:calendar" class="size-6" />,
+              title: "Agenda Llena de Oportunidades",
+              description:
+                "Citas programadas automáticamente con clientes potenciales de alto valor",
+            },
+            {
+              icon: <Icon name="mdi:robot" class="size-6" />,
+              title: "Bots Inteligentes 24/7",
+              description:
+                "Precalificación automática y respuestas instantáneas sin intervención manual",
+            },
+            {
+              icon: <Icon name="mdi:trending-up" class="size-6" />,
+              title: "CRM y Seguimiento Automatizado",
+              description:
+                "Sistema completo de gestión con embudos personalizados y seguimiento por WhatsApp",
+            },
+          ].map((benefit) => (
+            <div class="group hover:border-emerald/50 rounded-2xl border border-white/20 bg-white/10 p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:bg-white/15 hover:shadow-2xl">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0">
+                  <div class="bg-emerald/20 text-emerald group-hover:bg-emerald flex h-12 w-12 items-center justify-center rounded-xl transition-colors duration-300 group-hover:text-white">
+                    {benefit.icon}
                   </div>
                 </div>
+                <div class="flex-1">
+                  <h3 class="group-hover:text-emerald mb-3 text-lg font-bold text-white transition-colors duration-300">
+                    {benefit.title}
+                  </h3>
+                  <p class="text-light-green/80 leading-relaxed">
+                    {benefit.description}
+                  </p>
+                </div>
               </div>
-            ))
-          }
-        </div>
+            </div>
+          ))
+        }
+      </div>
 
+      <div
+        class="bg-emerald/10 border-emerald/20 relative overflow-hidden rounded-3xl border p-6 text-center lg:p-12"
+      >
         <div
-          class="bg-emerald/10 border-emerald/20 relative overflow-hidden rounded-3xl border p-6 text-center lg:p-12"
+          class="from-emerald/5 to-emerald/10 absolute inset-0 bg-gradient-to-r"
         >
-          <div
-            class="from-emerald/5 to-emerald/10 absolute inset-0 bg-gradient-to-r"
-          >
-          </div>
-          <div class="relative z-10">
-            <h3 class="mb-4 text-3xl font-bold text-white md:text-4xl">
-              ¿Listo para Dejar de Improvisar?
-            </h3>
-            <p class="text-light-green mx-auto max-w-2xl text-lg">
-              No más campañas que no convierten. No más procesos manuales. Solo
-              resultados que escalan tu negocio.
-            </p>
-          </div>
         </div>
+        <div class="relative z-10">
+          <h3 class="mb-4 text-3xl font-bold text-white md:text-4xl">
+            ¿Listo para Dejar de Improvisar?
+          </h3>
+          <p class="text-light-green mx-auto max-w-2xl text-lg">
+            No más campañas que no convierten. No más procesos manuales. Solo
+            resultados que escalan tu negocio.
+          </p>
+        </div>
+      </div>
 
-        {/* Trust indicators */}
-        <div class="mt-16 text-center">
-          <div
-            class="text-light-green/80 flex flex-wrap items-center justify-center gap-8"
-          >
-            <div class="flex items-center space-x-2">
-              <Icon
-                name="mdi:checkbox-marked-circle-auto-outline"
-                class="text-emerald h-5 w-5"
-              />
-              <span class="font-medium">Sin contratos de permanencia</span>
-            </div>
-            <div class="flex items-center space-x-2">
-              <Icon name="mdi:shield" class="text-emerald h-5 w-5" />
-              <span class="font-medium">Garantía de resultados</span>
-            </div>
-            <div class="flex items-center space-x-2">
-              <Icon name="mdi:trending-up" class="text-emerald h-5 w-5" />
-              <span class="font-medium">ROI desde el primer mes</span>
-            </div>
+      {/* Trust indicators */}
+      <div class="mt-16 text-center">
+        <div
+          class="text-light-green/80 flex flex-wrap items-center justify-center gap-8"
+        >
+          <div class="flex items-center space-x-2">
+            <Icon
+              name="mdi:checkbox-marked-circle-auto-outline"
+              class="text-emerald h-5 w-5"
+            />
+            <span class="font-medium">Sin contratos de permanencia</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <Icon name="mdi:shield" class="text-emerald h-5 w-5" />
+            <span class="font-medium">Garantía de resultados</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <Icon name="mdi:trending-up" class="text-emerald h-5 w-5" />
+            <span class="font-medium">ROI desde el primer mes</span>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- How we deliver -->
-    <section
-      id="deliver"
-      class="to-light-green/30 bg-gradient-to-b from-white py-16 md:py-24"
-    >
-      <div class="container mx-auto px-6 lg:px-8">
-        {/* Header */}
-        <div class="mb-12 text-center md:mb-20">
-          <h2
-            class="text-dark-gray mb-6 text-3xl leading-tight font-bold md:text-4xl lg:text-5xl"
-          >
-            Nuestro <span class="text-emerald">método probado</span> paso a paso
-          </h2>
-          <p
-            class="mx-auto max-w-4xl text-lg leading-relaxed text-gray-600 md:text-xl"
-          >
-            Transformamos tu proceso de ventas con un sistema que funciona las
-            24 horas, los 7 días de la semana, generando leads calificados
-            constantemente.
-          </p>
+  <!-- How we deliver -->
+  <section
+    id="deliver"
+    class="to-light-green/30 bg-gradient-to-b from-white py-16 md:py-24"
+  >
+    <div class="container mx-auto px-6 lg:px-8">
+      {/* Header */}
+      <div class="mb-12 text-center md:mb-20">
+        <h2
+          class="text-dark-gray mb-6 text-3xl leading-tight font-bold md:text-4xl lg:text-5xl"
+        >
+          Nuestro <span class="text-emerald">método probado</span> paso a paso
+        </h2>
+        <p
+          class="mx-auto max-w-4xl text-lg leading-relaxed text-gray-600 md:text-xl"
+        >
+          Transformamos tu proceso de ventas con un sistema que funciona las 24
+          horas, los 7 días de la semana, generando leads calificados
+          constantemente.
+        </p>
+      </div>
+
+      {/* Steps for Mobile */}
+      <div class="space-y-8 md:hidden">
+        {
+          [
+            {
+              number: "01",
+              title: "Despegue",
+              description:
+                "Iniciamos la captación de leads calificados mediante campañas estratégicas que actival el flujo de oportunidades reales, listas para avanzar en un proceso de compra o inversión.",
+              icon: <Icon name="mdi:electricity" class="h-6 w-6" />,
+            },
+            {
+              number: "02",
+              title: "Core",
+              description:
+                "Diseñar e implementar una infraestructura de ventas inteligente y automatizada, que te permita dar un seguimiento efectivo a cada lead, escalar sin esfuerzo manual y eliminar tareas repetitivas que frenan tu crecimiento.",
+              icon: <Icon name="mdi:target" class="h-6 w-6" />,
+            },
+            {
+              number: "03",
+              title: "Ascenso",
+              description:
+                "Optimizar, escalar y proyectar el crecimiento de tu negocio con base en datos reales. Aquí maximizamos los resultados del sistema ya instalado, corregimos cuellos de botella, afinamos cada del proceso y desarrollamos una ruta para que escales con eficiencia, sin saturarte ni perder el control.",
+              icon: <Icon name="mdi:trending-up" class="h-6 w-6" />,
+            },
+          ].map((step) => (
+            <div class="border-emerald/10 hover:border-emerald/30 rounded-2xl border bg-white p-6 shadow-lg transition-all duration-300">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0">
+                  <div class="bg-emerald flex h-12 w-12 items-center justify-center rounded-xl text-lg font-bold text-white">
+                    {step.number}
+                  </div>
+                </div>
+                <div class="flex-1">
+                  <div class="mb-3 flex items-center space-x-2">
+                    <div class="text-emerald">{step.icon}</div>
+                    <h3 class="text-dark-gray text-xl font-bold">
+                      {step.title}
+                    </h3>
+                  </div>
+                  <p class="leading-relaxed text-gray-600">
+                    {step.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      {/* Steps for Desktop - Timeline */}
+      <div class="relative hidden md:block">
+        {/* Timeline line */}
+        <div
+          class="from-emerald/20 via-emerald/40 to-emerald/20 absolute left-1/2 h-full w-1 -translate-x-1/2 transform rounded-full bg-gradient-to-b"
+        >
         </div>
 
-        {/* Steps for Mobile */}
-        <div class="space-y-8 md:hidden">
+        <div class="space-y-16 lg:space-y-24">
           {
             [
               {
@@ -255,6 +351,7 @@ import RootLayout from "../layouts/RootLayout.astro";
                 description:
                   "Iniciamos la captación de leads calificados mediante campañas estratégicas que actival el flujo de oportunidades reales, listas para avanzar en un proceso de compra o inversión.",
                 icon: <Icon name="mdi:electricity" class="h-6 w-6" />,
+                image: "ads.png",
               },
               {
                 number: "02",
@@ -262,6 +359,7 @@ import RootLayout from "../layouts/RootLayout.astro";
                 description:
                   "Diseñar e implementar una infraestructura de ventas inteligente y automatizada, que te permita dar un seguimiento efectivo a cada lead, escalar sin esfuerzo manual y eliminar tareas repetitivas que frenan tu crecimiento.",
                 icon: <Icon name="mdi:target" class="h-6 w-6" />,
+                image: "crm.png",
               },
               {
                 number: "03",
@@ -269,257 +367,556 @@ import RootLayout from "../layouts/RootLayout.astro";
                 description:
                   "Optimizar, escalar y proyectar el crecimiento de tu negocio con base en datos reales. Aquí maximizamos los resultados del sistema ya instalado, corregimos cuellos de botella, afinamos cada del proceso y desarrollamos una ruta para que escales con eficiencia, sin saturarte ni perder el control.",
                 icon: <Icon name="mdi:trending-up" class="h-6 w-6" />,
+                image: "analysis&strategy.jpg",
               },
-            ].map((step) => (
-              <div class="border-emerald/10 hover:border-emerald/30 rounded-2xl border bg-white p-6 shadow-lg transition-all duration-300">
-                <div class="flex items-start space-x-4">
-                  <div class="flex-shrink-0">
-                    <div class="bg-emerald flex h-12 w-12 items-center justify-center rounded-xl text-lg font-bold text-white">
+            ].map((step, index) => (
+              <div
+                class={`flex items-center gap-8 lg:gap-16 ${
+                  index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+                }`}
+              >
+                {/* Content */}
+                <div class="flex-1">
+                  <div class="border-emerald/10 hover:border-emerald/30 relative rounded-2xl border bg-white p-8 shadow-lg transition-all duration-300 hover:shadow-xl">
+                    <div class="bg-emerald absolute -top-4 -left-4 flex h-16 w-16 items-center justify-center rounded-full text-xl font-bold text-white shadow-lg">
                       {step.number}
                     </div>
-                  </div>
-                  <div class="flex-1">
-                    <div class="mb-3 flex items-center space-x-2">
-                      <div class="text-emerald">{step.icon}</div>
-                      <h3 class="text-dark-gray text-xl font-bold">
-                        {step.title}
-                      </h3>
+                    <div class="ml-8">
+                      <div class="mb-4 flex items-center space-x-3">
+                        <div class="text-emerald">{step.icon}</div>
+                        <h3 class="text-dark-gray text-2xl font-bold">
+                          {step.title}
+                        </h3>
+                      </div>
+                      <p class="text-lg leading-relaxed text-gray-600">
+                        {step.description}
+                      </p>
                     </div>
-                    <p class="leading-relaxed text-gray-600">
-                      {step.description}
-                    </p>
                   </div>
+                </div>
+
+                {/* Timeline dot */}
+                <div class="bg-emerald relative z-10 hidden h-6 w-6 flex-shrink-0 rounded-full shadow-lg lg:flex">
+                  <div class="m-auto h-3 w-3 rounded-full bg-white" />
+                </div>
+
+                {/* Visual element */}
+                <div class="hidden flex-1 lg:block">
+                  <img
+                    class="h-auto w-full rounded-2xl"
+                    src={step.image}
+                    alt={step.title}
+                  />
                 </div>
               </div>
             ))
           }
         </div>
+      </div>
 
-        {/* Steps for Desktop - Timeline */}
-        <div class="relative hidden md:block">
-          {/* Timeline line */}
-          <div
-            class="from-emerald/20 via-emerald/40 to-emerald/20 absolute left-1/2 h-full w-1 -translate-x-1/2 transform rounded-full bg-gradient-to-b"
-          >
+      {/* Bottom CTA */}
+      <div class="mt-16 text-center md:mt-24">
+        <div
+          class="from-emerald/5 to-emerald/10 border-emerald/20 rounded-3xl border bg-gradient-to-r p-8 md:p-12"
+        >
+          <h3 class="text-dark-gray mb-4 text-2xl font-bold md:text-3xl">
+            ¿Listo para comenzar tu transformación digital?
+          </h3>
+          <p class="mx-auto mb-8 max-w-2xl text-lg text-gray-600">
+            Únete a profesionales del sector inmobiliario que ya están escalando
+            sus ventas con nuestro sistema automatizado
+          </p>
+          <div class="flex items-center justify-center">
+            <button
+              type="button"
+              class="rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-emerald-600 hover:to-emerald-700 hover:shadow-xl"
+            >
+              <a
+                target="_blank"
+                href="https://wa.link/ukiqhb"
+                class="flex gap-2 px-8 py-4"
+              >
+                <span>Contáctenos</span>
+                <Icon
+                  name="mdi:arrow-right"
+                  class="size-5 transition-transform group-hover:translate-x-1"
+                />
+              </a>
+            </button>
           </div>
+        </div>
+      </div>
 
-          <div class="space-y-16 lg:space-y-24">
-            {
-              [
-                {
-                  number: "01",
-                  title: "Despegue",
-                  description:
-                    "Iniciamos la captación de leads calificados mediante campañas estratégicas que actival el flujo de oportunidades reales, listas para avanzar en un proceso de compra o inversión.",
-                  icon: <Icon name="mdi:electricity" class="h-6 w-6" />,
-                  image: "ads.png",
-                },
-                {
-                  number: "02",
-                  title: "Core",
-                  description:
-                    "Diseñar e implementar una infraestructura de ventas inteligente y automatizada, que te permita dar un seguimiento efectivo a cada lead, escalar sin esfuerzo manual y eliminar tareas repetitivas que frenan tu crecimiento.",
-                  icon: <Icon name="mdi:target" class="h-6 w-6" />,
-                  image: "crm.png",
-                },
-                {
-                  number: "03",
-                  title: "Ascenso",
-                  description:
-                    "Optimizar, escalar y proyectar el crecimiento de tu negocio con base en datos reales. Aquí maximizamos los resultados del sistema ya instalado, corregimos cuellos de botella, afinamos cada del proceso y desarrollamos una ruta para que escales con eficiencia, sin saturarte ni perder el control.",
-                  icon: <Icon name="mdi:trending-up" class="h-6 w-6" />,
-                  image: "analysis&strategy.jpg",
-                },
-              ].map((step, index) => (
-                <div
-                  class={`flex items-center gap-8 lg:gap-16 ${
-                    index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-                  }`}
-                >
-                  {/* Content */}
-                  <div class="flex-1">
-                    <div class="border-emerald/10 hover:border-emerald/30 relative rounded-2xl border bg-white p-8 shadow-lg transition-all duration-300 hover:shadow-xl">
-                      <div class="bg-emerald absolute -top-4 -left-4 flex h-16 w-16 items-center justify-center rounded-full text-xl font-bold text-white shadow-lg">
-                        {step.number}
-                      </div>
-                      <div class="ml-8">
-                        <div class="mb-4 flex items-center space-x-3">
-                          <div class="text-emerald">{step.icon}</div>
-                          <h3 class="text-dark-gray text-2xl font-bold">
-                            {step.title}
-                          </h3>
-                        </div>
-                        <p class="text-lg leading-relaxed text-gray-600">
-                          {step.description}
-                        </p>
-                      </div>
-                    </div>
+      {/* Trust indicators */}
+      <div
+        class="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-500 md:gap-8"
+      >
+        <div class="flex items-center space-x-2">
+          <Icon
+            name="mdi:checkbox-marked-circle-auto-outline"
+            class="text-emerald h-4 w-4"
+          />
+          <span>Implementación</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <Icon
+            name="mdi:checkbox-marked-circle-auto-outline"
+            class="text-emerald h-4 w-4"
+          />
+          <span>Soporte 24/7</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <Icon
+            name="mdi:checkbox-marked-circle-auto-outline"
+            class="text-emerald h-4 w-4"
+          />
+          <span>Garantía de resultados</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="to-dark-gray/95 from-dark-gray relative overflow-hidden bg-gradient-to-b py-20 md:py-32">
+    {/* Decorative elements */}
+    <div class="absolute -right-32 top-20 h-96 w-96 rounded-full bg-emerald/10 blur-3xl"></div>
+    <div class="bg-emerald/5 absolute -left-32 bottom-20 h-80 w-80 rounded-full blur-3xl"></div>
+    
+    {/* Decorative grid pattern */}
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(var(--color-emerald) 1px, transparent 1px), linear-gradient(90deg, var(--color-emerald) 1px, transparent 1px); background-size: 60px 60px;"></div>
+    
+    <div class="relative z-10 container mx-auto px-6">
+      {/* Section Header */}
+      <div class="mb-16 text-center">
+        <div class="mb-4 inline-flex items-center gap-2 rounded-full border border-emerald/30 bg-emerald/10 px-4 py-2">
+          <Icon name="mdi:star-four-points" class="size-4 text-emerald" />
+          <span class="text-sm font-medium text-emerald">Resultados Reales</span>
+        </div>
+        <h2 class="text-white mb-6 text-4xl leading-tight font-bold md:text-5xl lg:text-6xl">
+          Lo que dicen nuestros
+          <span class="block text-emerald">clientes exitosos</span>
+        </h2>
+        <p class="text-gray-400 mx-auto max-w-2xl text-lg">
+          Profesionales del sector inmobiliario que transformaron sus negocios con nuestro sistema
+        </p>
+      </div>
+
+      {/* Testimonials Grid */}
+      <div class="grid gap-8 lg:grid-cols-2">
+        {/* Testimonial 1: Paulina */}
+        <div class="group relative">
+          <div class="border-emerald/20 bg-dark-gray relative overflow-hidden rounded-3xl border p-1">
+            <div class="from-dark-gray to-dark-gray/95 absolute inset-0 bg-gradient-to-br"></div>
+            <div class="relative">
+              {/* Video Container - Vertical video (1080x1920) */}
+              <div class="relative overflow-hidden rounded-2xl bg-dark-gray">
+                <div class="flex h-64 items-center justify-center md:h-80 lg:h-96">
+                  <video
+                    id="paulina-video"
+                    class="h-full w-auto max-w-full object-contain"
+              		controls
+                    preload="metadata"
+                  >
+                    <source src="https://adcendiallc.sirv.com/Testimonio%20Pau/Testimonio%20Pau.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                {/* Play button overlay */}
+                <div class="absolute inset-0 flex items-center justify-center bg-dark-gray/40 transition-opacity group-hover:bg-dark-gray/20 testimonial-overlay">
+                  <button class="testimonial-play-btn bg-emerald/90 hover:bg-emerald flex h-16 w-16 items-center justify-center rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-emerald/50" data-video-id="paulina-video">
+                    <Icon name="mdi:play" class="size-8 pl-1 text-white" />
+                  </button>
+                </div>
+              </div>
+              
+              {/* Content */}
+              <div class="p-8">
+                {/* Client info */}
+                <div class="mb-6 flex items-center gap-4">
+                  <div class="bg-gradient-to-br from-emerald/20 to-emerald/5 flex h-14 w-14 items-center justify-center rounded-full">
+                    <span class="text-2xl font-bold text-emerald">P</span>
                   </div>
-
-                  {/* Timeline dot */}
-                  <div class="bg-emerald relative z-10 hidden h-6 w-6 flex-shrink-0 rounded-full shadow-lg lg:flex">
-                    <div class="m-auto h-3 w-3 rounded-full bg-white" />
-                  </div>
-
-                  {/* Visual element */}
-                  <div class="hidden flex-1 lg:block">
-                    <img
-                      class="h-auto w-full rounded-2xl"
-                      src={step.image}
-                      alt={step.title}
-                    />
+                  <div>
+                    <h3 class="text-white text-xl font-bold">Paulina</h3>
+                    <p class="text-gray-400 text-sm">Agente Inmobiliaria</p>
                   </div>
                 </div>
-              ))
-            }
-          </div>
-        </div>
-
-        {/* Bottom CTA */}
-        <div class="mt-16 text-center md:mt-24">
-          <div
-            class="from-emerald/5 to-emerald/10 border-emerald/20 rounded-3xl border bg-gradient-to-r p-8 md:p-12"
-          >
-            <h3 class="text-dark-gray mb-4 text-2xl font-bold md:text-3xl">
-              ¿Listo para comenzar tu transformación digital?
-            </h3>
-            <p class="mx-auto mb-8 max-w-2xl text-lg text-gray-600">
-              Únete a profesionales del sector inmobiliario que ya están
-              escalando sus ventas con nuestro sistema automatizado
-            </p>
-            <div class="flex items-center justify-center">
-              <button
-                type="button"
-                class="rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-emerald-600 hover:to-emerald-700 hover:shadow-xl"
-              >
-                <a
-                  target="_blank"
-                  href="https://wa.link/ukiqhb"
-                  class="flex gap-2 px-8 py-4"
-                >
-                  <span>Contáctenos</span>
-                  <Icon
-                    name="mdi:arrow-right"
-                    class="size-5 transition-transform group-hover:translate-x-1"
-                  />
-                </a>
-              </button>
+                
+                {/* Headline */}
+                <div class="mb-4 rounded-xl bg-emerald/10 p-4">
+                  <p class="text-emerald text-lg font-bold leading-tight">"+$4,000 en comisión con una sola renta en Miami"</p>
+                </div>
+                
+                {/* Description */}
+                <p class="mb-6 text-gray-300 leading-relaxed">
+                  Instalamos el sistema para captar leads de alta intención, logrando entre 15 y 20 prospectos calificados. Trabajamos en la segmentación específica para el mercado de rentas de lujo.
+                </p>
+                
+                {/* Metrics */}
+                <div class="grid grid-cols-3 gap-4">
+                  <div class="border-emerald/20 rounded-xl border bg-white/5 p-4 text-center">
+                    <Icon name="mdi:eye-outline" class="mx-auto mb-2 size-6 text-emerald" />
+                    <p class="text-white font-bold">15-20</p>
+                    <p class="text-gray-500 text-xs">Leads Calificados</p>
+                  </div>
+                  <div class="border-emerald/20 rounded-xl border bg-white/5 p-4 text-center">
+                    <Icon name="mdi:rocket-launch-outline" class="mx-auto mb-2 size-6 text-emerald" />
+                    <p class="text-white font-bold">+$4K</p>
+                    <p class="text-gray-500 text-xs">Comisión</p>
+                  </div>
+                  <div class="border-emerald/20 rounded-xl border bg-white/5 p-4 text-center">
+                    <Icon name="mdi:map-marker-outline" class="mx-auto mb-2 size-6 text-emerald" />
+                    <p class="text-white font-bold">Miami</p>
+                    <p class="text-gray-500 text-xs">Rentas de Lujo</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+          {/* Decorative corner */}
+          <div class="absolute -right-2 -top-2 h-8 w-8 rounded-full bg-emerald/20 blur-sm"></div>
         </div>
 
-        {/* Trust indicators */}
-        <div
-          class="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-500 md:gap-8"
+        {/* Testimonial 2: Margot Hart */}
+        <div class="group relative">
+          <div class="border-emerald/20 bg-dark-gray relative overflow-hidden rounded-3xl border p-1">
+            <div class="from-dark-gray to-dark-gray/95 absolute inset-0 bg-gradient-to-br"></div>
+            <div class="relative">
+              {/* Image Container */}
+              <div class="relative aspect-video overflow-hidden rounded-2xl bg-gradient-to-br from-emerald/20 to-emerald/5">
+                <img 
+                  src="/testimonio.png" 
+                  alt="Margot Hart testimonial"
+                  class="h-full w-full object-cover"
+                />
+                {/* Overlay with gradient */}
+                <div class="absolute inset-0 bg-gradient-to-t from-dark-gray via-transparent to-transparent"></div>
+              </div>
+              
+              {/* Content */}
+              <div class="p-8">
+                {/* Client info */}
+                <div class="mb-6 flex items-center gap-4">
+                  <div class="bg-gradient-to-br from-emerald/20 to-emerald/5 flex h-14 w-14 items-center justify-center rounded-full">
+                    <span class="text-2xl font-bold text-emerald">M</span>
+                  </div>
+                  <div>
+                    <h3 class="text-white text-xl font-bold">Margot Hart</h3>
+                    <p class="text-gray-400 text-sm">Agente de Alto Ticket</p>
+                  </div>
+                </div>
+                
+                {/* Headline */}
+                <div class="mb-4 rounded-xl bg-emerald/10 p-4">
+                  <p class="text-emerald text-lg font-bold leading-tight">"De $0 a +$150,000 en comisiones vendiendo Pre-Construcción"</p>
+                </div>
+                
+                {/* Description */}
+                <p class="mb-6 text-gray-300 leading-relaxed">
+                  Margot logró escalar su facturación vendiendo 3 propiedades de pre-construcción en Miami utilizando nuestro sistema de adquisición. Desarrollamos una estrategia que llevó su negocio a seis cifras.
+                </p>
+                
+                {/* Metrics */}
+                <div class="grid grid-cols-3 gap-4">
+                  <div class="border-emerald/20 rounded-xl border bg-white/5 p-4 text-center">
+                    <Icon name="mdi:home-outline" class="mx-auto mb-2 size-6 text-emerald" />
+                    <p class="text-white font-bold">3</p>
+                    <p class="text-gray-500 text-xs">Propiedades Vendidas</p>
+                  </div>
+                  <div class="border-emerald/20 rounded-xl border bg-white/5 p-4 text-center">
+                    <Icon name="mdi:currency-usd" class="mx-auto mb-2 size-6 text-emerald" />
+                    <p class="text-white font-bold">$150K</p>
+                    <p class="text-gray-500 text-xs">USD Facturación</p>
+                  </div>
+                  <div class="border-emerald/20 rounded-xl border bg-white/5 p-4 text-center">
+                    <Icon name="mdi:map-marker-outline" class="mx-auto mb-2 size-6 text-emerald" />
+                    <p class="text-white font-bold">Miami</p>
+                    <p class="text-gray-500 text-xs">Pre-construcción</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* Decorative corner */}
+          <div class="absolute -left-2 -bottom-2 h-8 w-8 rounded-full bg-emerald/20 blur-sm"></div>
+        </div>
+      </div>
+
+      {/* CTA */}
+      <div class="mt-16 text-center">
+        <p class="mb-6 text-gray-400 text-lg">¿Listo para escribir tu propia historia de éxito?</p>
+        <a
+          href="#calendar"
+          class="group inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-emerald to-emerald-600 px-10 py-5 text-lg font-bold text-white shadow-lg shadow-emerald/30 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-emerald/40"
         >
-          <div class="flex items-center space-x-2">
-            <Icon
-              name="mdi:checkbox-marked-circle-auto-outline"
-              class="text-emerald h-4 w-4"
-            />
-            <span>Implementación</span>
-          </div>
-          <div class="flex items-center space-x-2">
-            <Icon
-              name="mdi:checkbox-marked-circle-auto-outline"
-              class="text-emerald h-4 w-4"
-            />
-            <span>Soporte 24/7</span>
-          </div>
-          <div class="flex items-center space-x-2">
-            <Icon
-              name="mdi:checkbox-marked-circle-auto-outline"
-              class="text-emerald h-4 w-4"
-            />
-            <span>Garantía de resultados</span>
-          </div>
-        </div>
+          <Icon name="mdi:rocket-launch-outline" class="size-6" />
+          <span>Quiero mis resultados</span>
+          <Icon name="mdi:arrow-right" class="size-5 transition-transform group-hover:translate-x-1" />
+        </a>
       </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-dark-gray py-8">
-      <div class="container mx-auto px-6 lg:px-8">
-        <div class="pt-8">
-          <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
-            <div>
-              <Image
-                src={AdcendiaEmerald}
-                width={AdcendiaEmerald.width}
-                height={AdcendiaEmerald.height}
-                alt="Adcendia logo"
-                class="mb-8 max-w-96"
-              />
-              <p class="text-gray-400">
-                Transformamos visitantes en clientes reales con tecnología de
-                vanguardia y estrategias probadas.
-              </p>
-            </div>
-            <div>
-              <h4 class="mb-4 font-bold text-white">Servicios</h4>
-              <ul class="space-y-2 text-gray-400">
-                <li>Meta Ads</li>
-                <li>CRM Automatizado</li>
-                <li>Bots de IA</li>
-                <li>Consultoría</li>
-              </ul>
-            </div>
-            <div>
-              <h4 class="mb-4 font-bold text-white">Redes Sociales</h4>
-              <ul class="space-y-2 text-gray-400">
-                {
-                  [
-                    {
-                      href: "https://www.instagram.com/christiancrespoo?igsh=Z2IwcXcwNTljeW5m",
-                      label: "Instagram",
-                      icon: <Icon class="size-6" name="mdi:instagram" />,
-                    },
-
-                    {
-                      href: "https://www.facebook.com/share/17AVk1X2XD/",
-                      label: "Facebook",
-                      icon: <Icon class="size-6" name="mdi:facebook" />,
-                    },
-                    {
-                      href: "https://www.tiktok.com/@christiancrespoo?_t=ZS-8zTXOfUTrKG&_r=1",
-                      label: "TikTok",
-                      icon: (
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            fill="currentColor"
-                            d="M12.525.02c1.31-.02 2.61-.01 3.91-.02c.08 1.53.63 3.09 1.75 4.17c1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97c-.57-.26-1.1-.59-1.62-.93c-.01 2.92.01 5.84-.02 8.75c-.08 1.4-.54 2.79-1.35 3.94c-1.31 1.92-3.58 3.17-5.91 3.21c-1.43.08-2.86-.31-4.08-1.03c-2.02-1.19-3.44-3.37-3.65-5.71c-.02-.5-.03-1-.01-1.49c.18-1.9 1.12-3.72 2.58-4.96c1.66-1.44 3.98-2.13 6.15-1.72c.02 1.48-.04 2.96-.04 4.44c-.99-.32-2.15-.23-3.02.37c-.63.41-1.11 1.04-1.36 1.75c-.21.51-.15 1.07-.14 1.61c.24 1.64 1.82 3.02 3.5 2.87c1.12-.01 2.19-.66 2.77-1.61c.19-.33.4-.67.41-1.06c.1-1.79.06-3.57.07-5.36c.01-4.03-.01-8.05.02-12.07"
-                          />
-                        </svg>
-                      ),
-                    },
-                  ].map((o) => (
-                    <li>
-                      <a
-                        target="_blank"
-                        class="hover:text-emerald flex items-center gap-2 hover:scale-105"
-                        href={o.href}
-                      >
-                        {o.icon} {o.label}
-                      </a>
-                    </li>
-                  ))
-                }
-              </ul>
-            </div>
-          </div>
-
-          <div
-            class="mt-12 border-t border-gray-700 pt-8 text-center text-gray-400"
-          >
-            <p>&copy; 2024 Adcendia. Todos los derechos reservados</p>
-          </div>
-        </div>
-      </div>
-    </footer>
+    </div>
   </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="bg-white py-16 md:py-24">
+    <div class="container mx-auto px-6 lg:px-8">
+      <div class="mb-12 text-center md:mb-16">
+        <h2 class="text-dark-gray text-3xl font-bold md:text-4xl lg:text-5xl">
+          Preguntas <span class="text-emerald">Frecuentes</span>
+        </h2>
+        <p class="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
+          Resolvemos tus dudas antes de que preguntes
+        </p>
+      </div>
+
+      <div class="mx-auto max-w-3xl space-y-4">
+        {
+          [
+            {
+              question: "¿Qué incluye exactamente el Sistema ADCEN CORE?",
+              answer:
+                "Instalamos un sistema completo de adquisición de clientes en tu negocio que incluye: estrategia de publicidad, automatizaciones, CRM, agentes de IA, integraciones y más de 20 entregables.",
+            },
+            {
+              question: "¿Tengo que grabar videos?",
+              answer:
+                "Sí, te pediremos que grabes videos. Nosotros te proporcionamos los guiones exactos y te guiamos paso a paso para que tengan el máximo impacto, incluso si nunca has grabado frente a una cámara.",
+            },
+            {
+              question:
+                "¿Funciona para propiedades de lujo, rentas o desarrolladores?",
+              answer:
+                "El sistema es versátil y efectivo para todos los segmentos. Ha sido probado con éxito tanto en proyectos residenciales accesibles como en propiedades de lujo de más de $1,000,000 USD.",
+            },
+            {
+              question:
+                "¿Tengo que dejar de usar los portales inmobiliarios o mis referidos?",
+              answer:
+                "No es necesario. Puedes seguir usándolos, pero el Sistema ADCEN CORE está diseñado para que recuperes tu independencia y dejes de depender de esos métodos.",
+            },
+            {
+              question:
+                "¿Cuánto tiempo tengo que dedicarle al sistema semanalmente?",
+              answer:
+                "Solo necesitarás entre 1-3 horas a la semana para revisar el flujo de resultados, grabar nuevos videos con nuestros guiones y coordinar las visitas de los contactos calificados.",
+            },
+            {
+              question: "¿Tengo que saber de Meta Ads y el Ads Manager?",
+              answer:
+                "No, nosotros nos encargamos de todas las configuraciones de tus campañas, integraciones y automatizaciones.",
+            },
+            {
+              question: "¿Cómo filtran los leads que llegan de mi publicidad?",
+              answer:
+                "Implementamos 2 tipos de filtros: el primero con un formulario de precalificación y el segundo un agente de IA que realiza preguntas filtro para prospectar el lead.",
+            },
+            {
+              question: "¿Funciona si soy nuevo/a en el rubro inmobiliario?",
+              answer:
+                "Sí, aunque lo ideal sería que vendas 1 propiedad al mes, funciona para agentes nuevos. Tenemos clientes que han iniciado desde 0 y han tenido resultados.",
+            },
+          ].map((faq, _) => (
+            <details class="group rounded-xl border border-gray-200 bg-white transition-all duration-300">
+              <summary class="text-dark-gray hover:text-emerald flex cursor-pointer items-center justify-between gap-4 p-6 font-semibold">
+                <span class="text-lg">{faq.question}</span>
+                <Icon
+                  name="mdi:chevron-down"
+                  class="text-emerald size-6 flex-shrink-0 transition-transform duration-300 group-open:rotate-180"
+                />
+              </summary>
+              <div class="px-6 pb-6">
+                <p class="leading-relaxed text-gray-600">{faq.answer}</p>
+              </div>
+            </details>
+          ))
+        }
+      </div>
+
+      <!-- Bottom CTA -->
+      <div class="mt-16 text-center">
+        <div
+          class="from-emerald/10 via-emerald/5 to-emerald/10 mx-auto max-w-2xl rounded-3xl bg-gradient-to-r p-8 md:p-12"
+        >
+          <h3 class="text-dark-gray mb-4 text-2xl font-bold">
+            ¿Aún tienes dudas?
+          </h3>
+          <p class="mb-8 text-gray-600">
+            Estamos aquí para resolverlas. Chatea con nosotros y te asesoramos
+            sin compromiso.
+          </p>
+          <div
+            class="flex flex-col items-center justify-center gap-4 sm:flex-row"
+          >
+            <a
+              href="#calendar"
+              class="bg-emerald inline-flex items-center gap-2 rounded-xl px-8 py-4 font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
+            >
+              <Icon name="mdi:calendar" class="size-5" />
+              Agendar llamada
+            </a>
+            <a
+              target="_blank"
+              href="https://wa.link/ukiqhb"
+              class="border-emerald text-emerald hover:bg-emerald/5 inline-flex items-center gap-2 rounded-xl border-2 px-8 py-4 font-bold transition-all duration-300"
+            >
+              <Icon name="mdi:whatsapp" class="size-5" />
+              WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark-gray py-8">
+    <div class="container mx-auto px-6 lg:px-8">
+      <div class="pt-8">
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+          <div>
+            <Image
+              src={AdcendiaEmerald}
+              width={AdcendiaEmerald.width}
+              height={AdcendiaEmerald.height}
+              alt="Adcendia logo"
+              class="mb-8 max-w-80"
+            />
+            <p class="text-gray-400">
+              Transformamos visitantes en clientes reales con tecnología de
+              vanguardia y estrategias probadas.
+            </p>
+          </div>
+          <div>
+            <h4 class="mb-4 font-bold text-white">Servicios</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li>Meta Ads</li>
+              <li>CRM Automatizado</li>
+              <li>Bots de IA</li>
+              <li>Consultoría</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="mb-4 font-bold text-white">Redes Sociales</h4>
+            <ul class="space-y-2 text-gray-400">
+              {
+                [
+                  {
+                    href: "https://www.instagram.com/christiancrespoo?igsh=Z2IwcXcwNTljeW5m",
+                    label: "Instagram",
+                    icon: <Icon class="size-6" name="mdi:instagram" />,
+                  },
+
+                  {
+                    href: "https://www.facebook.com/share/17AVk1X2XD/",
+                    label: "Facebook",
+                    icon: <Icon class="size-6" name="mdi:facebook" />,
+                  },
+                  {
+                    href: "https://www.tiktok.com/@christiancrespoo?_t=ZS-8zTXOfUTrKG&_r=1",
+                    label: "TikTok",
+                    icon: (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M12.525.02c1.31-.02 2.61-.01 3.91-.02c.08 1.53.63 3.09 1.75 4.17c1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97c-.57-.26-1.1-.59-1.62-.93c-.01 2.92.01 5.84-.02 8.75c-.08 1.4-.54 2.79-1.35 3.94c-1.31 1.92-3.58 3.17-5.91 3.21c-1.43.08-2.86-.31-4.08-1.03c-2.02-1.19-3.44-3.37-3.65-5.71c-.02-.5-.03-1-.01-1.49c.18-1.9 1.12-3.72 2.58-4.96c1.66-1.44 3.98-2.13 6.15-1.72c.02 1.48-.04 2.96-.04 4.44c-.99-.32-2.15-.23-3.02.37c-.63.41-1.11 1.04-1.36 1.75c-.21.51-.15 1.07-.14 1.61c.24 1.64 1.82 3.02 3.5 2.87c1.12-.01 2.19-.66 2.77-1.61c.19-.33.4-.67.41-1.06c.1-1.79.06-3.57.07-5.36c.01-4.03-.01-8.05.02-12.07"
+                        />
+                      </svg>
+                    ),
+                  },
+                ].map((o) => (
+                  <li>
+                    <a
+                      target="_blank"
+                      class="hover:text-emerald flex items-center gap-2 hover:scale-105"
+                      href={o.href}
+                    >
+                      {o.icon} {o.label}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="mt-12 border-t border-gray-700 pt-8 text-center text-gray-400"
+        >
+          <p>&copy; 2024 Adcendia. Todos los derechos reservados</p>
+        </div>
+      </div>
+    </div>
+  </footer>
 </RootLayout>
+
+<script>
+  const video = document.getElementById("vsl-video") as HTMLVideoElement;
+  const overlay = document.getElementById("video-overlay");
+
+  if (video && overlay) {
+    overlay.addEventListener("click", () => {
+      video.play();
+    });
+
+    video.addEventListener("play", () => {
+      overlay.style.opacity = "0";
+      overlay.style.pointerEvents = "none";
+    });
+
+    video.addEventListener("pause", () => {
+      overlay.style.opacity = "1";
+      overlay.style.pointerEvents = "auto";
+    });
+
+    video.addEventListener("ended", () => {
+      overlay.style.opacity = "1";
+      overlay.style.pointerEvents = "auto";
+    });
+  }
+
+  // Testimonial video play functionality
+  document.addEventListener("DOMContentLoaded", () => {
+    const testimonialPlayBtns = document.querySelectorAll(".testimonial-play-btn");
+    
+    testimonialPlayBtns.forEach((btn) => {
+      const videoId = btn.getAttribute("data-video-id");
+      const video = document.getElementById(videoId as string) as HTMLVideoElement;
+      const overlay = btn.closest(".testimonial-overlay");
+      
+      if (video && btn instanceof HTMLElement && overlay instanceof HTMLElement) {
+        // Play button click
+        btn.addEventListener("click", () => {
+          video.play();
+        });
+        
+        // Click on video to pause/play
+        video.addEventListener("click", () => {
+          if (video.paused) {
+            video.play();
+          } else {
+            video.pause();
+          }
+        });
+        
+        video.addEventListener("play", () => {
+          overlay.style.opacity = "0";
+          overlay.style.pointerEvents = "none";
+        });
+        
+        video.addEventListener("pause", () => {
+          overlay.style.opacity = "1";
+          overlay.style.pointerEvents = "auto";
+        });
+        
+        video.addEventListener("ended", () => {
+          overlay.style.opacity = "1";
+          overlay.style.pointerEvents = "auto";
+        });
+      }
+    });
+  });
+</script>
